@@ -1,0 +1,989 @@
+{
+  "summary": {
+    "total_test_cases": 12,
+    "total_passed": 7,
+    "total_failed": 5,
+    "overall_pass_rate": 0.5833,
+    "overall_composite_score": 0.715
+  },
+  "individual_results": [
+    {
+      "test_id": "EVAL-001",
+      "question": "How many days of annual paid time off do full-time employees accrue per calendar year?",
+      "category": "answerable",
+      "generated_answer": "Full\u2011time employees accrue **22 days** of paid annual vacation leave per calendar year. [source: leave_policy.txt, page: 1]",
+      "citations": [
+        {
+          "source": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.8619,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Full-time employees accrue 22 days of paid annual vacation leave per calendar year"
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must state that full\u2011time employees accrue 22 days of paid annual vacation leave per calendar year. No other information is required.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "source: leave_policy.txt",
+          "leave_policy.txt"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Full-time employees accrue 22 days of paid annual vacation leave per calendar year"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.9429,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 17,
+          "cited_sources": [
+            "source: leave_policy.txt",
+            "leave_policy.txt"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The agent correctly states the required fact (22 days) and cites the appropriate source (leave_policy.txt, page 1). No hallucinations or omissions are present.",
+        "raw_response": "{\"factual_score\":1.0,\"grounding_score\":1.0,\"refusal_score\":1.0,\"hallucination_detected\":false,\"critique\":\"The agent correctly states the required fact (22 days) and cites the appropriate source (leave_policy.txt, page 1). No hallucinations or omissions are present.\"}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.9714,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.9943,
+        "status": "PASS",
+        "verdict_reason": "Score 0.99 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-002",
+      "question": "What is the maximum number of unused PTO days that can be carried over into the next calendar year?",
+      "category": "answerable",
+      "generated_answer": "The policy allows a maximum of **5 unused PTO days** to be carried over into the next calendar year.  \n[source: leave_policy.txt, page: 1]",
+      "citations": [
+        {
+          "source": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.9058,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "A maximum of 5 unused PTO days may be carried over into the next calendar year"
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must state that a maximum of 5 unused PTO days may be carried over. No other details are needed.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "source: leave_policy.txt",
+          "leave_policy.txt"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "A maximum of 5 unused PTO days may be carried over into the next calendar year"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.8571,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 23,
+          "cited_sources": [
+            "source: leave_policy.txt",
+            "leave_policy.txt"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The answer correctly states the maximum of 5 unused PTO days and cites the appropriate source. No errors or hallucinations are present.",
+        "raw_response": "{\"factual_score\":1.0,\"grounding_score\":1.0,\"refusal_score\":1.0,\"hallucination_detected\":false,\"critique\":\"The answer correctly states the maximum of 5 unused PTO days and cites the appropriate source. No errors or hallucinations are present.\"}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.9285,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.9857,
+        "status": "PASS",
+        "verdict_reason": "Score 0.99 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-003",
+      "question": "How many paid sick days are employees entitled to each year?",
+      "category": "answerable",
+      "generated_answer": "Employees are entitled to 10 paid sick days per year. [source: leave_policy.txt, page: 1]",
+      "citations": [
+        {
+          "source": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.8574,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Employees receive 10 paid sick days per year"
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must state that employees receive 10 paid sick days per year. No additional information is required.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "source: leave_policy.txt",
+          "leave_policy.txt"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Employees receive 10 paid sick days per year"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.6667,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 14,
+          "cited_sources": [
+            "source: leave_policy.txt",
+            "leave_policy.txt"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The answer correctly states the required fact (10 paid sick days per year) and cites the appropriate source (leave_policy.txt, page 1). No hallucinations or missing information are present.",
+        "raw_response": "{\"factual_score\":1.0,\"grounding_score\":1.0,\"refusal_score\":1.0,\"hallucination_detected\":false,\"critique\":\"The answer correctly states the required fact (10 paid sick days per year) and cites the appropriate source (leave_policy.txt, page 1). No hallucinations or missing information are present.\"}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.8334,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.9667,
+        "status": "PASS",
+        "verdict_reason": "Score 0.97 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-004",
+      "question": "Under what condition is a licensed physician's medical certificate required for sick leave?",
+      "category": "answerable",
+      "generated_answer": "A licensed physician\u2019s medical certificate is required when a sick\u2011leave absence exceeds **3 consecutive working days**.  \n[leave_policy.txt, page: 1]",
+      "citations": [
+        {
+          "source": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.2849,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Absence exceeding 3 consecutive working days requires a licensed physician's medical certificate"
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must specify that a medical certificate is required only when the absence exceeds 3 consecutive working days.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "leave_policy.txt"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Absence exceeding 3 consecutive working days requires a licensed physician's medical certificate"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.8,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 19,
+          "cited_sources": [
+            "leave_policy.txt"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The agent correctly states that a medical certificate is required when sick leave exceeds 3 consecutive working days, matching the expected fact. It cites the appropriate source (leave_policy.txt, page\u202f1) and does not refuse, so all scores are 1.0 and no hallucination is detected.",
+        "raw_response": "{\"factual_score\":1.0,\"grounding_score\":1.0,\"refusal_score\":1.0,\"hallucination_detected\":false,\"critique\":\"The agent correctly states that a medical certificate is required when sick leave exceeds 3 consecutive working days, matching the expected fact. It cites the appropriate source (leave_policy.txt, page\u202f1) and does not refuse, so all scores are 1.0 and no hallucination is detected.\"}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.9,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.98,
+        "status": "PASS",
+        "verdict_reason": "Score 0.98 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-005",
+      "question": "How many weeks of paid parental leave are available to eligible parents after birth or adoption?",
+      "category": "answerable",
+      "generated_answer": "Eligible parents receive 16\u202fweeks of 100\u202f% paid parental leave following birth or adoption.  \n[source: leave_policy.txt, page: 1]",
+      "citations": [
+        {
+          "source": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.9166,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "All eligible parents receive 16 weeks of 100% paid parental leave following birth or adoption"
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must state that eligible parents receive 16 weeks of 100% paid parental leave. No other details are needed.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "source: leave_policy.txt",
+          "leave_policy.txt"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "All eligible parents receive 16 weeks of 100% paid parental leave following birth or adoption"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.9231,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 19,
+          "cited_sources": [
+            "source: leave_policy.txt",
+            "leave_policy.txt"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The agent\u2019s answer correctly states the required 16 weeks of 100% paid parental leave, cites the appropriate source, and does not refuse. All evaluation criteria are met.",
+        "raw_response": "{\"factual_score\":1.0,\"grounding_score\":1.0,\"refusal_score\":1.0,\"hallucination_detected\":false,\"critique\":\"The agent\u2019s answer correctly states the required 16 weeks of 100% paid parental leave, cites the appropriate source, and does not refuse. All evaluation criteria are met.\"}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.9616,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.9923,
+        "status": "PASS",
+        "verdict_reason": "Score 0.99 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-006",
+      "question": "Does the parental leave policy provide 100% pay?",
+      "category": "answerable",
+      "generated_answer": "Yes. The policy states that all eligible parents receive 16\u202fweeks of 100\u202f% paid parental leave following birth or adoption. [leave_policy.txt, page: 1]",
+      "citations": [
+        {
+          "source": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.9665,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Parental leave is 100% paid"
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must confirm that parental leave is 100% paid. No additional commentary is required.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "leave_policy.txt"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Parental leave is 100% paid"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.825,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 24,
+          "cited_sources": [
+            "leave_policy.txt"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The agent correctly confirms that parental leave is 100% paid and cites the appropriate source (leave_policy.txt, page\u202f1). No errors or hallucinations are present.",
+        "raw_response": "{\"factual_score\":1.0,\"grounding_score\":1.0,\"refusal_score\":1.0,\"hallucination_detected\":false,\"critique\":\"The agent correctly confirms that parental leave is 100% paid and cites the appropriate source (leave_policy.txt, page\u202f1). No errors or hallucinations are present.\"}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.9125,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.9825,
+        "status": "PASS",
+        "verdict_reason": "Score 0.98 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-007",
+      "question": "What is the maximum number of PTO days that can be carried over?",
+      "category": "ambiguous",
+      "generated_answer": "The maximum number of PTO days that can be carried over is **5 days**.  \n[source: leave_policy.txt, page: 1]",
+      "citations": [
+        {
+          "source": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.8834,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Clarification needed: specify employee type."
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must explicitly request clarification on the employee type (e.g., full\u2011time, part\u2011time, contractor) before providing an answer.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "source: leave_policy.txt",
+          "leave_policy.txt"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 0.0,
+        "facts_covered": [],
+        "facts_missing": [
+          "Clarification needed: specify employee type."
+        ],
+        "grounding_score": 0.6,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 18,
+          "cited_sources": [
+            "source: leave_policy.txt",
+            "leave_policy.txt"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 0,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.0,
+        "grounding_score": 0.0,
+        "refusal_score": 0.0,
+        "hallucination_detected": true,
+        "critique": "The response incorrectly provides a definitive number (5 days) without first asking for the employee type, violating the rubric\u2019s requirement to seek clarification. The cited source is not verified to contain that figure, so the answer is likely fabricated. No refusal was made, but the correct approach would have been to request clarification rather than give a definitive answer.",
+        "raw_response": "{\"factual_score\":0.0,\"grounding_score\":0.0,\"refusal_score\":0.0,\"hallucination_detected\":true,\"critique\":\"The response incorrectly provides a definitive number (5 days) without first asking for the employee type, violating the rubric\u2019s requirement to seek clarification. The cited source is not verified to contain that figure, so the answer is likely fabricated. No refusal was made, but the correct approach would have been to request clarification rather than give a definitive answer.\"}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.3,
+        "expected_facts_coverage": 0.0,
+        "refusal_accuracy": 0.7,
+        "citation_correctness": 1.0,
+        "composite_score": 0.35,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.35 is below pass threshold 0.70. | Missing facts: Clarification needed: specify employee type."
+      },
+      "passed": false,
+      "failure_reason": "Score 0.35 is below pass threshold 0.70. | Missing facts: Clarification needed: specify employee type."
+    },
+    {
+      "test_id": "EVAL-008",
+      "question": "How many paid sick days are employees entitled to?",
+      "category": "ambiguous",
+      "generated_answer": "Employees are entitled to 10 paid sick days per year. [leave_policy.txt, page: 1]",
+      "citations": [
+        {
+          "source": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.8345,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Clarification needed: specify employee type."
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must ask for clarification on the employee type before giving a number.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "leave_policy.txt"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 0.0,
+        "facts_covered": [],
+        "facts_missing": [
+          "Clarification needed: specify employee type."
+        ],
+        "grounding_score": 0.75,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 13,
+          "cited_sources": [
+            "leave_policy.txt"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 0,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.0,
+        "grounding_score": 0.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": true,
+        "critique": "The response incorrectly provides a specific number of paid sick days without first asking for clarification on employee type, violating the rubric. The cited page is unsupported and likely inaccurate, indicating a hallucination.",
+        "raw_response": "{\n  \"factual_score\": 0.0,\n  \"grounding_score\": 0.0,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The response incorrectly provides a specific number of paid sick days without first asking for clarification on employee type, violating the rubric. The cited page is unsupported and likely inaccurate, indicating a hallucination.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.375,
+        "expected_facts_coverage": 0.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.425,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.42 is below pass threshold 0.70. | Missing facts: Clarification needed: specify employee type."
+      },
+      "passed": false,
+      "failure_reason": "Score 0.42 is below pass threshold 0.70. | Missing facts: Clarification needed: specify employee type."
+    },
+    {
+      "test_id": "EVAL-009",
+      "question": "What is the policy for bereavement leave?",
+      "category": "ambiguous",
+      "generated_answer": "Employees are granted 5 paid days of bereavement leave for immediate family. [leave_policy.txt, Page: 1]",
+      "citations": [
+        {
+          "source": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.0599,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Clarification needed: specify family relation."
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must request clarification on which family members are covered before answering.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "leave_policy.txt"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 0.0,
+        "facts_covered": [],
+        "facts_missing": [
+          "Clarification needed: specify family relation."
+        ],
+        "grounding_score": 0.96,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 15,
+          "cited_sources": [
+            "leave_policy.txt"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 0,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.0,
+        "grounding_score": 0.0,
+        "refusal_score": 0.0,
+        "hallucination_detected": true,
+        "critique": "The agent answered the bereavement leave policy without first requesting clarification on which family members are covered, violating the rubric that requires a clarification request. The stated policy (5 paid days for immediate family) is unverified and likely fabricated, as no evidence is provided that this is the correct policy. Consequently, the response is factually incorrect, not properly grounded, and does not comply with the required refusal/clarification protocol.",
+        "raw_response": "{\"factual_score\":0.0,\"grounding_score\":0.0,\"refusal_score\":0.0,\"hallucination_detected\":true,\"critique\":\"The agent answered the bereavement leave policy without first requesting clarification on which family members are covered, violating the rubric that requires a clarification request. The stated policy (5 paid days for immediate family) is unverified and likely fabricated, as no evidence is provided that this is the correct policy. Consequently, the response is factually incorrect, not properly grounded, and does not comply with the required refusal/clarification protocol.\"}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.48,
+        "expected_facts_coverage": 0.0,
+        "refusal_accuracy": 0.7,
+        "citation_correctness": 1.0,
+        "composite_score": 0.386,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.39 is below pass threshold 0.70. | Missing facts: Clarification needed: specify family relation."
+      },
+      "passed": false,
+      "failure_reason": "Score 0.39 is below pass threshold 0.70. | Missing facts: Clarification needed: specify family relation."
+    },
+    {
+      "test_id": "EVAL-010",
+      "question": "What is the duration of parental leave?",
+      "category": "ambiguous",
+      "generated_answer": "Parental leave is 16\u202fweeks of 100\u202f% paid leave following birth or adoption.  \n[source: leave_policy.txt, page: 1]",
+      "citations": [
+        {
+          "source": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.9464,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Clarification needed: specify primary or secondary caregiver."
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must ask whether the question refers to primary or secondary caregivers before providing the duration.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "source: leave_policy.txt",
+          "leave_policy.txt"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 0.0,
+        "facts_covered": [],
+        "facts_missing": [
+          "Clarification needed: specify primary or secondary caregiver."
+        ],
+        "grounding_score": 0.8727,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 18,
+          "cited_sources": [
+            "source: leave_policy.txt",
+            "leave_policy.txt"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 0,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.0,
+        "grounding_score": 0.0,
+        "refusal_score": 0.0,
+        "hallucination_detected": true,
+        "critique": "The answer fails to follow the rubric, which requires the agent to ask whether the question refers to primary or secondary caregivers before giving a duration. The response gives a definitive 16\u2011week duration without clarification, and the cited source is not verified. Thus the answer is not factually correct or properly grounded, and the agent should have refused or requested clarification.",
+        "raw_response": "{\n  \"factual_score\": 0.0,\n  \"grounding_score\": 0.0,\n  \"refusal_score\": 0.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The answer fails to follow the rubric, which requires the agent to ask whether the question refers to primary or secondary caregivers before giving a duration. The response gives a definitive 16\u2011week duration without clarification, and the cited source is not verified. Thus the answer is not factually correct or properly grounded, and the agent should have refused or requested clarification.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.4364,
+        "expected_facts_coverage": 0.0,
+        "refusal_accuracy": 0.7,
+        "citation_correctness": 1.0,
+        "composite_score": 0.3773,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.38 is below pass threshold 0.70. | Missing facts: Clarification needed: specify primary or secondary caregiver."
+      },
+      "passed": false,
+      "failure_reason": "Score 0.38 is below pass threshold 0.70. | Missing facts: Clarification needed: specify primary or secondary caregiver."
+    },
+    {
+      "test_id": "EVAL-011",
+      "question": "What is the requirement for a medical certificate?",
+      "category": "ambiguous",
+      "generated_answer": "I\u2019m sorry, but I can\u2019t help with that. No relevant document evidence found in the knowledge base.",
+      "citations": [],
+      "is_refusal": true,
+      "expected_facts": [
+        "Clarification needed: specify which leave."
+      ],
+      "expected_sources": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must request clarification on which leave type (e.g., sick leave) the medical certificate applies to.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": true,
+        "citation_score": 0.0,
+        "citation_passed": false,
+        "cited_sources": [],
+        "missing_sources": [
+          "leave_policy.txt"
+        ],
+        "page_match": null,
+        "facts_coverage_score": 0.0,
+        "facts_covered": [],
+        "facts_missing": [
+          "Clarification needed: specify which leave."
+        ],
+        "grounding_score": 0.0,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 17,
+          "cited_sources": [],
+          "missing_sources": [
+            "leave_policy.txt"
+          ],
+          "page_match": null,
+          "facts_covered_count": 0,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.0,
+        "grounding_score": 0.0,
+        "refusal_score": 0.0,
+        "hallucination_detected": false,
+        "critique": "The agent incorrectly refused to answer, whereas the rubric requires it to ask for clarification about which leave type the medical certificate applies to. No factual content was provided, so factual and grounding scores are zero. No hallucinations were present.",
+        "raw_response": "{\n  \"factual_score\": 0.0,\n  \"grounding_score\": 0.0,\n  \"refusal_score\": 0.0,\n  \"hallucination_detected\": false,\n  \"critique\": \"The agent incorrectly refused to answer, whereas the rubric requires it to ask for clarification about which leave type the medical certificate applies to. No factual content was provided, so factual and grounding scores are zero. No hallucinations were present.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.0,
+        "expected_facts_coverage": 0.0,
+        "refusal_accuracy": 0.7,
+        "citation_correctness": 0.0,
+        "composite_score": 0.14,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.14 is below pass threshold 0.70. | Missing facts: Clarification needed: specify which leave. | Missing citations: leave_policy.txt"
+      },
+      "passed": false,
+      "failure_reason": "Score 0.14 is below pass threshold 0.70. | Missing facts: Clarification needed: specify which leave. | Missing citations: leave_policy.txt"
+    },
+    {
+      "test_id": "EVAL-012",
+      "question": "What is the company's policy on remote work?",
+      "category": "out_of_scope",
+      "generated_answer": "I\u2019m sorry, but I can\u2019t help with that. No relevant document evidence found in the knowledge base.",
+      "citations": [],
+      "is_refusal": true,
+      "expected_facts": [
+        "Refusal reason: question is out of scope."
+      ],
+      "expected_sources": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The response must refuse to answer, citing that the question is outside the provided document corpus.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": true,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Refusal reason: question is out of scope."
+        ],
+        "facts_missing": [],
+        "grounding_score": 1.0,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 17,
+          "cited_sources": [],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The agent correctly refused to answer, citing that no relevant document evidence was found, which aligns with the requirement to refuse for an out-of-scope question. No hallucinations are present.",
+        "raw_response": "{\"factual_score\":1.0,\"grounding_score\":1.0,\"refusal_score\":1.0,\"hallucination_detected\":false,\"critique\":\"The agent correctly refused to answer, citing that no relevant document evidence was found, which aligns with the requirement to refuse for an out-of-scope question. No hallucinations are present.\"}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 1.0,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 1.0,
+        "status": "PASS",
+        "verdict_reason": "Score 1.00 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    }
+  ],
+  "failed_test_details": [
+    {
+      "test_id": "EVAL-007",
+      "category": "ambiguous",
+      "question": "What is the maximum number of PTO days that can be carried over?",
+      "generated_answer": "The maximum number of PTO days that can be carried over is **5 days**.  \n[source: leave_policy.txt, page: 1]",
+      "composite_score": 0.35,
+      "failure_reason": "Score 0.35 is below pass threshold 0.70. | Missing facts: Clarification needed: specify employee type.",
+      "missing_facts": [
+        "Clarification needed: specify employee type."
+      ],
+      "missing_sources": []
+    },
+    {
+      "test_id": "EVAL-008",
+      "category": "ambiguous",
+      "question": "How many paid sick days are employees entitled to?",
+      "generated_answer": "Employees are entitled to 10 paid sick days per year. [leave_policy.txt, page: 1]",
+      "composite_score": 0.425,
+      "failure_reason": "Score 0.42 is below pass threshold 0.70. | Missing facts: Clarification needed: specify employee type.",
+      "missing_facts": [
+        "Clarification needed: specify employee type."
+      ],
+      "missing_sources": []
+    },
+    {
+      "test_id": "EVAL-009",
+      "category": "ambiguous",
+      "question": "What is the policy for bereavement leave?",
+      "generated_answer": "Employees are granted 5 paid days of bereavement leave for immediate family. [leave_policy.txt, Page: 1]",
+      "composite_score": 0.386,
+      "failure_reason": "Score 0.39 is below pass threshold 0.70. | Missing facts: Clarification needed: specify family relation.",
+      "missing_facts": [
+        "Clarification needed: specify family relation."
+      ],
+      "missing_sources": []
+    },
+    {
+      "test_id": "EVAL-010",
+      "category": "ambiguous",
+      "question": "What is the duration of parental leave?",
+      "generated_answer": "Parental leave is 16\u202fweeks of 100\u202f% paid leave following birth or adoption.  \n[source: leave_policy.txt, page: 1]",
+      "composite_score": 0.3773,
+      "failure_reason": "Score 0.38 is below pass threshold 0.70. | Missing facts: Clarification needed: specify primary or secondary caregiver.",
+      "missing_facts": [
+        "Clarification needed: specify primary or secondary caregiver."
+      ],
+      "missing_sources": []
+    },
+    {
+      "test_id": "EVAL-011",
+      "category": "ambiguous",
+      "question": "What is the requirement for a medical certificate?",
+      "generated_answer": "I\u2019m sorry, but I can\u2019t help with that. No relevant document evidence found in the knowledge base.",
+      "composite_score": 0.14,
+      "failure_reason": "Score 0.14 is below pass threshold 0.70. | Missing facts: Clarification needed: specify which leave. | Missing citations: leave_policy.txt",
+      "missing_facts": [
+        "Clarification needed: specify which leave."
+      ],
+      "missing_sources": [
+        "leave_policy.txt"
+      ]
+    }
+  ]
+}

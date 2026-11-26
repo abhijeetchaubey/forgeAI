@@ -1,0 +1,102 @@
+{
+  "total_topics_analyzed": 5,
+  "supported_count": 1,
+  "partially_supported_count": 2,
+  "unsupported_count": 2,
+  "topic_evaluations": [
+    {
+      "topic": "Leave policy (annual PTO, sick leave, family leave, bereavement, unpaid leave, carry‑over rules)",
+      "status": "partially_supported",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "source_file": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 0.7299,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "reasoning": "The excerpts cover annual PTO accrual and carry‑over limit, paid sick leave details, parental leave duration, and bereavement leave days. However, they do not mention unpaid leave, other family leave categories, or detailed procedures for leave requests. Thus, the topic is not fully supported.",
+      "missing_information": "Information on unpaid leave policies, other family leave types (e.g., medical leave, jury duty), detailed procedures for requesting leave, eligibility criteria for various leave types, and any additional carry‑over rules beyond PTO are not provided in the excerpts."
+    },
+    {
+      "topic": "Employee benefits (health insurance, retirement plans, employee assistance programs, other benefits outlined in the guide)",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "General HR handbook policies (eligibility, usage, procedures, and any other policy sections provided)",
+      "status": "partially_supported",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "source_file": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.1804,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "reasoning": "The excerpts only cover leave policies (PTO, sick leave, parental leave, bereavement). They provide some eligibility (full-time employees, eligible parents), usage (days, carryover), and a procedure (medical certificate). However, the requested topic is general HR handbook policies, which would include many other sections not present in the excerpts. Therefore, the excerpts are insufficient to fully answer the topic, but they do provide partial information.",
+      "missing_information": "Other HR handbook sections beyond leave policies (e.g., benefits, conduct, performance, compensation, safety, etc.) and detailed eligibility criteria and procedures for those sections are not provided."
+    },
+    {
+      "topic": "Procedures for requesting leave or benefits enrollment",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "source_file": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.2681,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "reasoning": "The excerpts detail the types and amounts of leave but do not describe how employees should request leave or enroll in benefits. Therefore, they do not contain sufficient facts to answer operational questions about the procedures.",
+      "missing_information": "Procedures for requesting leave or benefits enrollment (e.g., steps, forms, deadlines, contact points) are not provided in the excerpts."
+    },
+    {
+      "topic": "Definitions and eligibility criteria for various leave types",
+      "status": "supported",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "source_file": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.1633,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "reasoning": "The excerpts contain clear definitions and eligibility criteria for each leave type mentioned: PTO for full‑time employees, sick leave for all employees with a medical certificate after 3 days, parental leave for all eligible parents (primary and secondary caregivers) after birth or adoption, and bereavement leave for employees for immediate family. These facts are sufficient to answer the topic.",
+      "missing_information": null
+    }
+  ],
+  "guaranteed_capabilities": [
+    "Definitions and eligibility criteria for various leave types"
+  ],
+  "partially_supported_topics": [
+    "Leave policy (annual PTO, sick leave, family leave, bereavement, unpaid leave, carry‑over rules)",
+    "General HR handbook policies (eligibility, usage, procedures, and any other policy sections provided)"
+  ],
+  "blocked_unsupported_topics": [
+    "Employee benefits (health insurance, retirement plans, employee assistance programs, other benefits outlined in the guide)",
+    "Procedures for requesting leave or benefits enrollment"
+  ],
+  "recommendations": [
+    "For 'Leave policy (annual PTO, sick leave, family leave, bereavement, unpaid leave, carry‑over rules)': Upload documentation addressing: Information on unpaid leave policies, other family leave types (e.g., medical leave, jury duty), detailed procedures for requesting leave, eligibility criteria for various leave types, and any additional carry‑over rules beyond PTO are not provided in the excerpts.",
+    "Blocked unsupported topic 'Employee benefits (health insurance, retirement plans, employee assistance programs, other benefits outlined in the guide)'. Provide manual or technical specifications to enable.",
+    "For 'General HR handbook policies (eligibility, usage, procedures, and any other policy sections provided)': Upload documentation addressing: Other HR handbook sections beyond leave policies (e.g., benefits, conduct, performance, compensation, safety, etc.) and detailed eligibility criteria and procedures for those sections are not provided.",
+    "Blocked unsupported topic 'Procedures for requesting leave or benefits enrollment'. Provide manual or technical specifications to enable."
+  ],
+  "evaluated_at": "2026-11-26T18:46:30.043122"
+}

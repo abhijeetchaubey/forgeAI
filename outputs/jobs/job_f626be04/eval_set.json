@@ -1,0 +1,177 @@
+{
+  "total_test_cases": 12,
+  "category_counts": {
+    "answerable": 6,
+    "ambiguous": 5,
+    "out_of_scope": 1
+  },
+  "test_cases": [
+    {
+      "test_id": "EVAL-001",
+      "question": "How many days of annual paid time off do full-time employees accrue per calendar year?",
+      "category": "answerable",
+      "expected_facts": [
+        "Full-time employees accrue 22 days of paid annual vacation leave per calendar year"
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must state that full‑time employees accrue 22 days of paid annual vacation leave per calendar year. No other information is required."
+    },
+    {
+      "test_id": "EVAL-002",
+      "question": "What is the maximum number of unused PTO days that can be carried over into the next calendar year?",
+      "category": "answerable",
+      "expected_facts": [
+        "A maximum of 5 unused PTO days may be carried over into the next calendar year"
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must state that a maximum of 5 unused PTO days may be carried over. No other details are needed."
+    },
+    {
+      "test_id": "EVAL-003",
+      "question": "How many paid sick days are employees entitled to each year?",
+      "category": "answerable",
+      "expected_facts": [
+        "Employees receive 10 paid sick days per year"
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must state that employees receive 10 paid sick days per year. No additional information is required."
+    },
+    {
+      "test_id": "EVAL-004",
+      "question": "Under what condition is a licensed physician's medical certificate required for sick leave?",
+      "category": "answerable",
+      "expected_facts": [
+        "Absence exceeding 3 consecutive working days requires a licensed physician's medical certificate"
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must specify that a medical certificate is required only when the absence exceeds 3 consecutive working days."
+    },
+    {
+      "test_id": "EVAL-005",
+      "question": "How many weeks of paid parental leave are available to eligible parents after birth or adoption?",
+      "category": "answerable",
+      "expected_facts": [
+        "All eligible parents receive 16 weeks of 100% paid parental leave following birth or adoption"
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must state that eligible parents receive 16 weeks of 100% paid parental leave. No other details are needed."
+    },
+    {
+      "test_id": "EVAL-006",
+      "question": "Does the parental leave policy provide 100% pay?",
+      "category": "answerable",
+      "expected_facts": [
+        "Parental leave is 100% paid"
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": "1",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must confirm that parental leave is 100% paid. No additional commentary is required."
+    },
+    {
+      "test_id": "EVAL-007",
+      "question": "What is the maximum number of PTO days that can be carried over?",
+      "category": "ambiguous",
+      "expected_facts": [
+        "Clarification needed: specify employee type."
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must explicitly request clarification on the employee type (e.g., full‑time, part‑time, contractor) before providing an answer."
+    },
+    {
+      "test_id": "EVAL-008",
+      "question": "How many paid sick days are employees entitled to?",
+      "category": "ambiguous",
+      "expected_facts": [
+        "Clarification needed: specify employee type."
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must ask for clarification on the employee type before giving a number."
+    },
+    {
+      "test_id": "EVAL-009",
+      "question": "What is the policy for bereavement leave?",
+      "category": "ambiguous",
+      "expected_facts": [
+        "Clarification needed: specify family relation."
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must request clarification on which family members are covered before answering."
+    },
+    {
+      "test_id": "EVAL-010",
+      "question": "What is the duration of parental leave?",
+      "category": "ambiguous",
+      "expected_facts": [
+        "Clarification needed: specify primary or secondary caregiver."
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must ask whether the question refers to primary or secondary caregivers before providing the duration."
+    },
+    {
+      "test_id": "EVAL-011",
+      "question": "What is the requirement for a medical certificate?",
+      "category": "ambiguous",
+      "expected_facts": [
+        "Clarification needed: specify which leave."
+      ],
+      "expected_source_document": [
+        "leave_policy.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must request clarification on which leave type (e.g., sick leave) the medical certificate applies to."
+    },
+    {
+      "test_id": "EVAL-012",
+      "question": "What is the company's policy on remote work?",
+      "category": "out_of_scope",
+      "expected_facts": [
+        "Refusal reason: question is out of scope."
+      ],
+      "expected_source_document": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The response must refuse to answer, citing that the question is outside the provided document corpus."
+    }
+  ],
+  "generated_at": "2026-11-26T18:47:04.570610"
+}

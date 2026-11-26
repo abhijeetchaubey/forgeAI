@@ -239,6 +239,47 @@ def test_generator_retry_loop_recovery(tmp_path):
     assert mock_structured.invoke.call_count == 2
 
 
+def test_generator_does_not_retry_rate_limit_error(tmp_path):
+    mock_llm = MagicMock()
+    mock_structured = MagicMock()
+    mock_llm.with_structured_output.return_value = mock_structured
+    rate_limit_error = RuntimeError("Groq quota exhausted")
+    rate_limit_error.status_code = 429
+    mock_structured.invoke.side_effect = rate_limit_error
+
+    req = RequirementSpec(
+        project_name="Test Rate Limit",
+        intended_audience="Engineers",
+        scope="Diagnostics",
+        tone="Clear",
+        must_answer_topics=["Sensor telemetry"],
+        must_refuse_topics=["Legal claims"],
+        raw_brief="Test brief",
+    )
+    ground = GroundabilityReport(
+        total_topics_analyzed=1,
+        supported_count=1,
+        partially_supported_count=0,
+        unsupported_count=0,
+        topic_evaluations=[],
+        guaranteed_capabilities=["Sensor telemetry"],
+        partially_supported_topics=[],
+        blocked_unsupported_topics=[],
+        recommendations=[],
+    )
+
+    with pytest.raises(RuntimeError, match="after 1 attempt"):
+        generate_agent(
+            requirements=req,
+            groundability=ground,
+            output_path=tmp_path / "rate_limited_agent.json",
+            llm=mock_llm,
+            max_retries=3,
+        )
+
+    assert mock_structured.invoke.call_count == 1
+
+
 # ---------------------------------------------------------------------------
 # End-to-End Live Generation Test
 # ---------------------------------------------------------------------------

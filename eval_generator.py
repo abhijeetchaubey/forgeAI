@@ -99,9 +99,9 @@ class _LLMGeneratedTestCase(BaseModel):
     question: str = Field(description="The test question")
     category: EvalCategory = Field(description="Question category")
     expected_facts: List[str] = Field(description="Concrete facts or refusal reasons")
-    expected_source_document: List[str] = Field(default_factory=list, description="Source document names")
-    expected_page_number: Optional[str] = Field(default=None, description="Page number(s) as string e.g. '1' or null")
-    should_refuse: bool = Field(default=False, description="Whether to refuse")
+    expected_source_document: List[str] = Field(description="Source document names")
+    expected_page_number: Optional[str] = Field(description="Page number(s) as string e.g. '1' or null")
+    should_refuse: bool = Field(description="Whether to refuse")
     evaluation_criteria: str = Field(description="Grading rubric")
 
 
@@ -140,6 +140,22 @@ Each test case MUST include:
 - category: 'answerable' or 'multi_document'
 - expected_facts: list of factual data points from the documents
 - expected_source_document: list of document names (e.g. ['sample.pdf', 'sample.csv'])
+- expected_page_number: string of page number(s) or null
+- should_refuse: false
+- evaluation_criteria: detailed rubric for grading the response
+"""
+
+PROMPT_SINGLE_DOCUMENT_CASES = """DOCUMENT CORPUS AND METADATA:
+{document_corpus}
+
+INSTRUCTIONS:
+Generate at least 12 distinct 'answerable' test cases using only facts directly
+supported by this single source document. Do not generate 'multi_document' cases.
+Each test case MUST include:
+- question: clear, precise question
+- category: 'answerable'
+- expected_facts: list of factual data points from the document
+- expected_source_document: list containing the source document name
 - expected_page_number: string of page number(s) or null
 - should_refuse: false
 - evaluation_criteria: detailed rubric for grading the response
@@ -204,6 +220,20 @@ def _format_document_corpus(documents: List[Document]) -> str:
     return "\n\n".join(sections)
 
 
+def _build_grounded_cases_prompt(documents: List[Document]) -> str:
+    """Avoids requesting cross-document cases when only one source was uploaded."""
+    source_names = {
+        doc.metadata.get("filename") or doc.metadata.get("source") or f"doc_{index}"
+        for index, doc in enumerate(documents, 1)
+    }
+    template = (
+        PROMPT_GROUNDED_CASES
+        if len(source_names) > 1
+        else PROMPT_SINGLE_DOCUMENT_CASES
+    )
+    return template.replace("{document_corpus}", _format_document_corpus(documents))
+
+
 def verify_test_case_evidence(
     case: _LLMGeneratedTestCase,
     vector_store: Any,
@@ -246,29 +276,43 @@ def _invoke_case_generation(
     system_prompt: str,
     human_prompt: str
 ) -> List[_LLMGeneratedTestCase]:
-    """Invokes ChatGroq with structured output and fallback parsing."""
+    """Invokes the LLM with strict structured output and a JSON-mode fallback."""
     try:
-        structured_llm = llm.with_structured_output(_LLMEvalSetWrapper)
+        structured_llm = llm.with_structured_output(
+            _LLMEvalSetWrapper,
+            method="json_schema",
+            strict=True,
+        )
         response: _LLMEvalSetWrapper = structured_llm.invoke([
             SystemMessage(content=system_prompt),
             HumanMessage(content=human_prompt)
         ])
         return response.test_cases
     except Exception as e:
-        logger.warning("Structured generation exception: %s. Using direct fallback prompt.", str(e))
-        fallback_prompt = (
-            f"{system_prompt}\n\n{human_prompt}\n\n"
-            "Return valid JSON formatted as: {\"test_cases\": [{\"question\": \"...\", \"category\": \"...\", "
-            "\"expected_facts\": [\"...\"], \"expected_source_document\": [\"...\"], \"expected_page_number\": null, "
-            "\"should_refuse\": false, \"evaluation_criteria\": \"...\"}]}"
+        logger.warning("Strict JSON schema generation failed: %s. Retrying in JSON mode.", str(e))
+        json_mode_prompt = (
+            f"{system_prompt}\n\n"
+            "Return only one valid JSON object with a top-level `test_cases` array. "
+            "Each case must include question, category, expected_facts, "
+            "expected_source_document, expected_page_number, should_refuse, and "
+            "evaluation_criteria. Use null when expected_page_number is unknown. "
+            "Do not include markdown or text outside the JSON object."
         )
-        res = llm.invoke([HumanMessage(content=fallback_prompt)])
-        match = re.search(r"\{.*\}", res.content, re.DOTALL)
-        if match:
-            data = json.loads(match.group(0))
-            wrapper = _LLMEvalSetWrapper.model_validate(data)
-            return wrapper.test_cases
-        return []
+        try:
+            structured_llm = llm.with_structured_output(
+                _LLMEvalSetWrapper,
+                method="json_mode",
+            )
+            response: _LLMEvalSetWrapper = structured_llm.invoke([
+                SystemMessage(content=json_mode_prompt),
+                HumanMessage(content=human_prompt),
+            ])
+            return response.test_cases
+        except Exception as fallback_error:
+            logger.error("JSON mode evaluation generation failed: %s", str(fallback_error))
+            raise RuntimeError(
+                "Evaluation case generation failed with both strict JSON schema and JSON mode."
+            ) from fallback_error
 
 
 def generate_evaluation_set(
@@ -311,8 +355,8 @@ def generate_evaluation_set(
     valid_test_cases: List[TestCase] = []
     seen_normalized_questions: Set[str] = set()
 
-    # Pass 1: In-scope cases (Answerable & Multi-document)
-    prompt_pass1 = PROMPT_GROUNDED_CASES.replace("{document_corpus}", corpus_text)
+    # Pass 1: In-scope cases, with cross-document cases only when available
+    prompt_pass1 = _build_grounded_cases_prompt(docs)
     logger.info("Generating in-scope cases (Answerable & Multi-document)...")
     cases_pass1 = _invoke_case_generation(active_llm, DEFAULT_SYSTEM_PROMPT, prompt_pass1)
 

@@ -15,14 +15,14 @@ def test_groq_initialization_with_valid_key(mock_chat_groq):
     mock_instance = MagicMock()
     mock_chat_groq.return_value = mock_instance
 
-    llm = get_groq_llm(
-        api_key="gsk_test_valid_key_0123456789",
-        model="llama-3.3-70b-versatile",
-        temperature=0.2
-    )
+    with patch("src.llm.groq_client.settings.GROQ_MODEL", "openai/gpt-oss-20b"):
+        llm = get_groq_llm(
+            api_key="gsk_test_valid_key_0123456789",
+            temperature=0.2
+        )
     assert llm == mock_instance
     mock_chat_groq.assert_called_once_with(
         groq_api_key="gsk_test_valid_key_0123456789",
-        model_name="llama-3.3-70b-versatile",
+        model_name="openai/gpt-oss-20b",
         temperature=0.2
     )

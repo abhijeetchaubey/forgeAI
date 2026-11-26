@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "stop_reason": "Evaluation passed configured threshold (0.7150 >= 0.7000).",
+  "original_agent_path": "outputs\\jobs\\job_f626be04\\agent.json",
+  "final_agent_path": "outputs\\jobs\\job_f626be04\\agent.json",
+  "pass_threshold": 0.7,
+  "max_iterations": 3,
+  "iterations_executed": 0,
+  "final_score": 0.715,
+  "final_pass_rate": 0.5833,
+  "remaining_failures": [
+    "EVAL-007",
+    "EVAL-008",
+    "EVAL-009",
+    "EVAL-010",
+    "EVAL-011"
+  ],
+  "iterations": []
+}

@@ -25,7 +25,7 @@ class Settings(BaseModel):
         default_factory=lambda: os.getenv("GROQ_API_KEY", "")
     )
     GROQ_MODEL: str = Field(
-        default_factory=lambda: os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+        default_factory=lambda: os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
     )
     GROQ_TEMPERATURE: float = Field(
         default_factory=lambda: float(os.getenv("GROQ_TEMPERATURE", "0.0")),

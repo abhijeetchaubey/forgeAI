@@ -332,11 +332,13 @@ def generate_agent(
     active_llm = llm or get_groq_llm()
     last_error: Optional[Exception] = None
     error_feedback: Optional[str] = None
+    attempts_used = 0
 
     logger.info("Generating Agent Definition for '%s'...", req_spec.project_name)
 
     # 4. Controlled retry generation loop
     for attempt in range(1, max_retries + 1):
+        attempts_used = attempt
         logger.info("Agent generation attempt %d of %d", attempt, max_retries)
         try:
             prompt_content = _build_generation_prompt(
@@ -432,11 +434,15 @@ def generate_agent(
 
         except Exception as e:
             last_error = e
+            if getattr(e, "status_code", None) == 429:
+                logger.error("LLM rate limit reached; stopping generation retries.")
+                break
             error_feedback = f"Error during attempt {attempt}: {str(e)}"
             logger.warning("Generation attempt %d failed: %s. Retrying...", attempt, str(e))
 
+    attempt_label = "attempt" if attempts_used == 1 else "attempts"
     raise RuntimeError(
-        f"Failed to generate valid AgentDefinition after {max_retries} attempts. Last error: {last_error}"
+        f"Failed to generate valid AgentDefinition after {attempts_used} {attempt_label}. Last error: {last_error}"
     )
 
 

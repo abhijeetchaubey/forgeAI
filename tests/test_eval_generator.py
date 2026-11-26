@@ -1,18 +1,97 @@
 import pytest
 from pathlib import Path
+from unittest.mock import MagicMock, call
 from pydantic import ValidationError
+from langchain_core.documents import Document
 
 from eval_generator import (
     TestCase,
     EvaluationSet,
     EvalCategory,
     _normalize_question,
+    _build_grounded_cases_prompt,
+    _invoke_case_generation,
     verify_test_case_evidence,
     _LLMGeneratedTestCase,
+    _LLMEvalSetWrapper,
     PROMPTS_DIR,
     ensure_prompts_saved,
     load_prompt_templates,
 )
+
+
+def test_grounded_prompt_does_not_request_multi_document_cases_from_one_source():
+    document = Document(
+        page_content="Full-time employees receive 22 annual PTO days.",
+        metadata={"filename": "leave_policy.txt"},
+    )
+
+    prompt = _build_grounded_cases_prompt([document])
+
+    assert "Do not generate 'multi_document' cases." in prompt
+    assert "category: 'answerable'" in prompt
+
+
+def test_grounded_prompt_requests_cross_document_cases_for_multiple_sources():
+    documents = [
+        Document(page_content="PTO policy.", metadata={"filename": "leave_policy.txt"}),
+        Document(page_content="Benefits policy.", metadata={"filename": "benefits.txt"}),
+    ]
+
+    prompt = _build_grounded_cases_prompt(documents)
+
+    assert "'multi_document'" in prompt
+
+
+def test_case_generation_uses_strict_json_schema():
+    test_case = _LLMGeneratedTestCase(
+        question="How many annual leave days are provided?",
+        category=EvalCategory.ANSWERABLE,
+        expected_facts=["22 days"],
+        expected_source_document=["leave_policy.txt"],
+        expected_page_number="1",
+        should_refuse=False,
+        evaluation_criteria="Must state 22 days.",
+    )
+    structured_llm = MagicMock()
+    structured_llm.invoke.return_value = _LLMEvalSetWrapper(test_cases=[test_case])
+    llm = MagicMock()
+    llm.with_structured_output.return_value = structured_llm
+
+    cases = _invoke_case_generation(llm, "system prompt", "human prompt")
+
+    assert cases == [test_case]
+    llm.with_structured_output.assert_called_once_with(
+        _LLMEvalSetWrapper,
+        method="json_schema",
+        strict=True,
+    )
+
+
+def test_case_generation_falls_back_to_json_mode():
+    test_case = _LLMGeneratedTestCase(
+        question="How many annual leave days are provided?",
+        category=EvalCategory.ANSWERABLE,
+        expected_facts=["22 days"],
+        expected_source_document=["leave_policy.txt"],
+        expected_page_number="1",
+        should_refuse=False,
+        evaluation_criteria="Must state 22 days.",
+    )
+    strict_llm = MagicMock()
+    strict_llm.invoke.side_effect = ValueError("strict schema unavailable")
+    json_mode_llm = MagicMock()
+    json_mode_llm.invoke.return_value = _LLMEvalSetWrapper(test_cases=[test_case])
+    llm = MagicMock()
+    llm.with_structured_output.side_effect = [strict_llm, json_mode_llm]
+
+    cases = _invoke_case_generation(llm, "system prompt", "human prompt")
+
+    assert cases == [test_case]
+    assert llm.with_structured_output.call_args_list == [
+        call(_LLMEvalSetWrapper, method="json_schema", strict=True),
+        call(_LLMEvalSetWrapper, method="json_mode"),
+    ]
 
 
 def test_test_case_schema_validation():

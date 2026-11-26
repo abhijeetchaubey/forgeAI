@@ -1,0 +1,84 @@
+{
+  "total_topics_analyzed": 5,
+  "supported_count": 1,
+  "partially_supported_count": 1,
+  "unsupported_count": 3,
+  "topic_evaluations": [
+    {
+      "topic": "Annual paid time off (PTO) accrual and carryover rules",
+      "status": "supported",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "source_file": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 0.6676,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "reasoning": "Excerpt 1 explicitly states that full-time employees accrue 22 days of paid annual vacation leave per calendar year and that a maximum of 5 unused PTO days may be carried over into the next calendar year. These concrete details directly answer the topic regarding accrual and carryover rules, providing sufficient factual information.",
+      "missing_information": null
+    },
+    {
+      "topic": "Leave types and eligibility (e.g., sick leave, parental leave)",
+      "status": "partially_supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "leave_policy.txt",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 0.9906,
+          "excerpt": "ACME CORP OFFICIAL LEAVE POLICY\n\n1. Annual Paid Time Off (PTO):\nFull-time employees accrue 22 days of paid annual vacation leave per calendar year.\nA maximum of 5 unused PTO days may be carried over into the next calendar year.\n\n2. Paid Sick Leave:\nEmployees receive 10 paid sick days per year. Absence exceeding 3 consecutive\nworking days requires a licensed physician's medical certificate.\n\n3. Parental Leave:\nAll eligible parents (primary and secondary caregivers) receive 16 weeks of\n100% paid parental leave following birth or adoption.\n\n4. Bereavement Leave:\nEmployees are granted 5 paid days of bereavement leave for immediate family."
+        }
+      ],
+      "reasoning": "Marginal semantic match found (best distance: 0.9906). Partial information only.",
+      "missing_information": "In-depth operational specifications or procedure details."
+    },
+    {
+      "topic": "Employee benefits details (health, retirement, etc.)",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "Procedures for requesting and approving leave",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "Citation of source documents for each answer",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    }
+  ],
+  "guaranteed_capabilities": [
+    "Annual paid time off (PTO) accrual and carryover rules"
+  ],
+  "partially_supported_topics": [
+    "Leave types and eligibility (e.g., sick leave, parental leave)"
+  ],
+  "blocked_unsupported_topics": [
+    "Employee benefits details (health, retirement, etc.)",
+    "Procedures for requesting and approving leave",
+    "Citation of source documents for each answer"
+  ],
+  "recommendations": [
+    "For 'Leave types and eligibility (e.g., sick leave, parental leave)': Upload documentation addressing: In-depth operational specifications or procedure details.",
+    "Blocked unsupported topic 'Employee benefits details (health, retirement, etc.)'. Provide manual or technical specifications to enable.",
+    "Blocked unsupported topic 'Procedures for requesting and approving leave'. Provide manual or technical specifications to enable.",
+    "Blocked unsupported topic 'Citation of source documents for each answer'. Provide manual or technical specifications to enable."
+  ],
+  "evaluated_at": "2026-11-26T18:34:19.550025"
+}
