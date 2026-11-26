@@ -1,0 +1,35 @@
+Analyze the following failed evaluation results and current agent configuration.
+
+CURRENT AGENT VERSION: {agent_version}
+CURRENT RETRIEVAL CONFIG:
+{retrieval_config}
+
+CURRENT REFUSAL POLICY:
+{refusal_policy}
+
+CURRENT SYSTEM PROMPT:
+{system_prompt}
+
+FAILED TEST CASES ({num_failures} total):
+{failed_cases_summary}
+
+INSTRUCTIONS:
+For each failed test case, classify it into one of:
+- "Retrieval miss"
+- "Prompt defect"
+- "Hallucination"
+- "Wrong refusal"
+
+Return a single JSON object with these exact keys:
+{{
+  "overall_root_cause_summary": "<Concise summary of the main systemic issues>",
+  "classifications": [
+    {{
+      "test_id": "<EVAL-XXX>",
+      "failure_category": "<Retrieval miss | Prompt defect | Hallucination | Wrong refusal>",
+      "root_cause": "<Specific root cause based on evidence>",
+      "recommended_fix": "<Targeted surgical fix>",
+      "target_config_section": "<retrieval_config | system_prompt | refusal_policy | output_contract>"
+    }}
+  ]
+}}

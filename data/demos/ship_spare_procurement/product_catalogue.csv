@@ -1,0 +1,7 @@
+part_id,part_name,category,unit_price_usd,lead_time_days,min_order_qty,stock_status,supplier_id
+SP-101,Main Diesel Fuel Injector,Fuel System,1450.00,7,2,In Stock,SUP-01
+SP-102,Turbocharger Cartridge Assembly,Propulsion,6800.00,21,1,Low Stock,SUP-02
+SP-103,Seawater Cooling Pump Impeller,Cooling,320.00,5,4,In Stock,SUP-03
+SP-104,Cylinder Head Gasket Kit,Engine Block,540.00,10,2,In Stock,SUP-01
+SP-105,Auxiliary Bilge Float Switch,Safety,115.00,3,5,In Stock,SUP-03
+SP-106,High-Pressure Hydraulic Hose 2m,Hydraulics,280.00,14,2,Backorder,SUP-02

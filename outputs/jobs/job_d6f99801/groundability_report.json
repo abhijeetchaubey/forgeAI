@@ -1,0 +1,152 @@
+{
+  "total_topics_analyzed": 6,
+  "supported_count": 1,
+  "partially_supported_count": 3,
+  "unsupported_count": 2,
+  "topic_evaluations": [
+    {
+      "topic": "Company HR policies",
+      "status": "partially_supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "Leave_Policy.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "chunk_index": 3,
+          "similarity_score": 1.029,
+          "excerpt": "DEMO DOCUMENT — Fictional sample policy for ForgeAI testing\nPage 2\nQuestions about statutory leave, special leave categories or an individual employee's balance should be referred\nto Human Resources. This policy does not specify sick-leave or parental-leave entitlements.\nDocument control: LV-POL-002 | Version 1.0 | Effective date: 1 January 2026 | Owner: Human Resources"
+        },
+        {
+          "source_file": "Leave_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.1071,
+          "excerpt": "DEMO DOCUMENT — Fictional sample policy for ForgeAI testing\nPage 1\nAnnual Leave Policy\nOceanic Services Ltd. | Demonstration dataset | Version 1.0\n1. Purpose\nThis policy explains annual leave entitlement, request procedures, approval and record keeping for employees of\nthe fictional company Oceanic Services Ltd.\n2. Annual leave entitlement\nEligible full-time employees are entitled to 24 days of annual leave during each calendar year. The entitlement is\nprorated for employees who join or leave during the year, according to the period of eligible service.\nAnnual leave is maintained in working days. Weekly rest days and declared public holidays that fall within an\napproved leave period are not deducted from the employee's annual leave balance.\n3. Applying for annual leave\nEmployees should submit a leave request through the designated HR system at least seven calendar days before\nthe intended start date. Longer notice may be required for extended leave or where operational coverage must be"
+        },
+        {
+          "source_file": "Leave_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 1.1659,
+          "excerpt": "should notify the reporting manager as soon as reasonably possible. Supporting information may be requested in\naccordance with company procedure.\n6. Carry-forward\nA maximum of five unused annual leave days may be carried forward into the next calendar year. Carried-forward\ndays must be used by 31 March of that next year; unused carried-forward days expire after that date unless\nHuman Resources approves an exception in writing.\n7. Leave balance and records\nEmployees can check their available leave balance in the HR system or request a statement from Human\nResources. The HR system is the official record of leave accrual, usage and balance.\n8. Policy questions"
+        }
+      ],
+      "reasoning": "Marginal semantic match found (best distance: 1.029). Partial information only.",
+      "missing_information": "In-depth operational specifications or procedure details."
+    },
+    {
+      "topic": "Annual leave entitlement and procedures",
+      "status": "supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "Leave_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 0.7916,
+          "excerpt": "DEMO DOCUMENT — Fictional sample policy for ForgeAI testing\nPage 1\nAnnual Leave Policy\nOceanic Services Ltd. | Demonstration dataset | Version 1.0\n1. Purpose\nThis policy explains annual leave entitlement, request procedures, approval and record keeping for employees of\nthe fictional company Oceanic Services Ltd.\n2. Annual leave entitlement\nEligible full-time employees are entitled to 24 days of annual leave during each calendar year. The entitlement is\nprorated for employees who join or leave during the year, according to the period of eligible service.\nAnnual leave is maintained in working days. Weekly rest days and declared public holidays that fall within an\napproved leave period are not deducted from the employee's annual leave balance.\n3. Applying for annual leave\nEmployees should submit a leave request through the designated HR system at least seven calendar days before\nthe intended start date. Longer notice may be required for extended leave or where operational coverage must be"
+        },
+        {
+          "source_file": "Leave_Policy.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "chunk_index": 3,
+          "similarity_score": 0.8771,
+          "excerpt": "DEMO DOCUMENT — Fictional sample policy for ForgeAI testing\nPage 2\nQuestions about statutory leave, special leave categories or an individual employee's balance should be referred\nto Human Resources. This policy does not specify sick-leave or parental-leave entitlements.\nDocument control: LV-POL-002 | Version 1.0 | Effective date: 1 January 2026 | Owner: Human Resources"
+        },
+        {
+          "source_file": "Leave_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 0.9387,
+          "excerpt": "should notify the reporting manager as soon as reasonably possible. Supporting information may be requested in\naccordance with company procedure.\n6. Carry-forward\nA maximum of five unused annual leave days may be carried forward into the next calendar year. Carried-forward\ndays must be used by 31 March of that next year; unused carried-forward days expire after that date unless\nHuman Resources approves an exception in writing.\n7. Leave balance and records\nEmployees can check their available leave balance in the HR system or request a statement from Human\nResources. The HR system is the official record of leave accrual, usage and balance.\n8. Policy questions"
+        },
+        {
+          "source_file": "Leave_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 1,
+          "similarity_score": 1.0784,
+          "excerpt": "the intended start date. Longer notice may be required for extended leave or where operational coverage must be\narranged.\nA leave request is not approved merely because it has been submitted. Employees must receive approval from\ntheir reporting manager before taking planned annual leave.\n4. Approval and operational requirements\nThe reporting manager reviews requests based on available leave balance, staffing requirements, operational\nschedules and fairness across the team. For vessel crew, leave dates must also be coordinated with the vessel\nroster and safe manning requirements.\nManagers should communicate approval or rejection through the HR system. If a request is rejected, the\nemployee may discuss alternative dates with the manager.\n5. Emergency leave notification\nIf an employee cannot provide the normal notice because of an emergency, the employee or a representative\nshould notify the reporting manager as soon as reasonably possible. Supporting information may be requested in"
+        }
+      ],
+      "reasoning": "Direct semantic document match found (best distance: 0.7916).",
+      "missing_information": null
+    },
+    {
+      "topic": "Salary structure and payment information",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "Medical and health benefits",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "Attendance rules and tracking",
+      "status": "partially_supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "Leave_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 1.2358,
+          "excerpt": "should notify the reporting manager as soon as reasonably possible. Supporting information may be requested in\naccordance with company procedure.\n6. Carry-forward\nA maximum of five unused annual leave days may be carried forward into the next calendar year. Carried-forward\ndays must be used by 31 March of that next year; unused carried-forward days expire after that date unless\nHuman Resources approves an exception in writing.\n7. Leave balance and records\nEmployees can check their available leave balance in the HR system or request a statement from Human\nResources. The HR system is the official record of leave accrual, usage and balance.\n8. Policy questions"
+        }
+      ],
+      "reasoning": "Marginal semantic match found (best distance: 1.2358). Partial information only.",
+      "missing_information": "In-depth operational specifications or procedure details."
+    },
+    {
+      "topic": "Employee reimbursement processes",
+      "status": "partially_supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "Leave_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 1.2787,
+          "excerpt": "should notify the reporting manager as soon as reasonably possible. Supporting information may be requested in\naccordance with company procedure.\n6. Carry-forward\nA maximum of five unused annual leave days may be carried forward into the next calendar year. Carried-forward\ndays must be used by 31 March of that next year; unused carried-forward days expire after that date unless\nHuman Resources approves an exception in writing.\n7. Leave balance and records\nEmployees can check their available leave balance in the HR system or request a statement from Human\nResources. The HR system is the official record of leave accrual, usage and balance.\n8. Policy questions"
+        }
+      ],
+      "reasoning": "Marginal semantic match found (best distance: 1.2787). Partial information only.",
+      "missing_information": "In-depth operational specifications or procedure details."
+    }
+  ],
+  "guaranteed_capabilities": [
+    "Annual leave entitlement and procedures"
+  ],
+  "partially_supported_topics": [
+    "Company HR policies",
+    "Attendance rules and tracking",
+    "Employee reimbursement processes"
+  ],
+  "blocked_unsupported_topics": [
+    "Salary structure and payment information",
+    "Medical and health benefits"
+  ],
+  "recommendations": [
+    "For 'Company HR policies': Upload documentation addressing: In-depth operational specifications or procedure details.",
+    "Blocked unsupported topic 'Salary structure and payment information'. Provide manual or technical specifications to enable.",
+    "Blocked unsupported topic 'Medical and health benefits'. Provide manual or technical specifications to enable.",
+    "For 'Attendance rules and tracking': Upload documentation addressing: In-depth operational specifications or procedure details.",
+    "For 'Employee reimbursement processes': Upload documentation addressing: In-depth operational specifications or procedure details."
+  ],
+  "evaluated_at": "2026-11-26T16:27:56.183358"
+}

@@ -1,0 +1,214 @@
+{
+  "total_topics_analyzed": 6,
+  "supported_count": 4,
+  "partially_supported_count": 2,
+  "unsupported_count": 0,
+  "topic_evaluations": [
+    {
+      "topic": "Company HR policies and code of conduct outlined in official documentation",
+      "status": "partially_supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 3,
+          "similarity_score": 0.9648,
+          "excerpt": "exclusions and claim documentation must be checked against that policy. This handbook does not establish a\ngeneral travel or business-expense reimbursement entitlement.\n7. Questions and policy interpretation\nEmployees should contact Human Resources for clarification when a situation is not covered by the published\npolicies. The company may update policies from time to time; employees should refer to the latest approved\nversion."
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 1.0941,
+          "excerpt": "General policy questions may be answered from this handbook, but an assistant must not infer or disclose an\nindividual's salary or personal payroll data.\n4. Leave administration\nAnnual leave entitlement and application rules are described in the separate Leave Policy. Employees should\nsubmit leave requests through the designated HR process and obtain approval before making non-emergency\ntravel arrangements.\n5. Employee conduct and respectful workplace\nEmployees are expected to act professionally, treat colleagues and customers respectfully, protect company\nproperty, and avoid harassment, discrimination, retaliation or conflicts of interest. Concerns may be raised with a\nreporting manager or Human Resources.\n6. Medical benefits and reimbursements\nThe general medical benefit framework is described in the separate Medical Benefits Policy. Eligibility, limits,\nexclusions and claim documentation must be checked against that policy. This handbook does not establish a"
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "chunk_index": 4,
+          "similarity_score": 1.0967,
+          "excerpt": "DEMO DOCUMENT — Fictional sample policy for ForgeAI testing\nPage 2\nDocument control: HR-POL-001 | Version 1.0 | Effective date: 1 January 2026 | Owner: Human Resources"
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.1033,
+          "excerpt": "DEMO DOCUMENT — Fictional sample policy for ForgeAI testing\nPage 1\nEmployee HR Policy Handbook\nOceanic Services Ltd. | Demonstration dataset | Version 1.0\n1. Purpose and scope\nThis handbook describes general workplace policies for the fictional company Oceanic Services Ltd. It applies to\nshore-based employees and vessel crew unless a section states otherwise. Where a signed employment\nagreement or applicable law provides a more specific or more protective requirement, that requirement takes\nprecedence.\n2. Working hours and attendance\nStandard shore-office hours are 09:30 to 18:00, Monday through Friday, with a one-hour meal break. Vessel crew\nworking hours are determined by the approved vessel roster and operational requirements. Employees must\nrecord attendance using the company attendance system or the vessel's approved log.\nEmployees who expect to be late or absent must notify their reporting manager as soon as reasonably possible"
+        }
+      ],
+      "reasoning": "Marginal semantic match found (best distance: 0.9648). Partial information only.",
+      "missing_information": "In-depth operational specifications or procedure details."
+    },
+    {
+      "topic": "Annual leave entitlements, accruals, and request procedures",
+      "status": "supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 0.7844,
+          "excerpt": "General policy questions may be answered from this handbook, but an assistant must not infer or disclose an\nindividual's salary or personal payroll data.\n4. Leave administration\nAnnual leave entitlement and application rules are described in the separate Leave Policy. Employees should\nsubmit leave requests through the designated HR process and obtain approval before making non-emergency\ntravel arrangements.\n5. Employee conduct and respectful workplace\nEmployees are expected to act professionally, treat colleagues and customers respectfully, protect company\nproperty, and avoid harassment, discrimination, retaliation or conflicts of interest. Concerns may be raised with a\nreporting manager or Human Resources.\n6. Medical benefits and reimbursements\nThe general medical benefit framework is described in the separate Medical Benefits Policy. Eligibility, limits,\nexclusions and claim documentation must be checked against that policy. This handbook does not establish a"
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 3,
+          "similarity_score": 1.1116,
+          "excerpt": "exclusions and claim documentation must be checked against that policy. This handbook does not establish a\ngeneral travel or business-expense reimbursement entitlement.\n7. Questions and policy interpretation\nEmployees should contact Human Resources for clarification when a situation is not covered by the published\npolicies. The company may update policies from time to time; employees should refer to the latest approved\nversion."
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 1,
+          "similarity_score": 1.1997,
+          "excerpt": "record attendance using the company attendance system or the vessel's approved log.\nEmployees who expect to be late or absent must notify their reporting manager as soon as reasonably possible\nand, where practicable, before the start of the scheduled shift. Repeated unexplained absence may be referred to\nHuman Resources for review.\n3. Salary administration\nFor this demonstration dataset, salaries are processed monthly. The normal payroll date is the last working day of\neach calendar month. If the normal payroll date falls on a public holiday or a non-working day, payment is\nnormally processed on the preceding working day.\nIndividual salary amounts, bank details, deductions and payslips are confidential employee-specific information.\nGeneral policy questions may be answered from this handbook, but an assistant must not infer or disclose an\nindividual's salary or personal payroll data.\n4. Leave administration"
+        }
+      ],
+      "reasoning": "Direct semantic document match found (best distance: 0.7844).",
+      "missing_information": null
+    },
+    {
+      "topic": "Salary guidelines, pay schedules, and compensation policies",
+      "status": "supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 1,
+          "similarity_score": 0.9433,
+          "excerpt": "record attendance using the company attendance system or the vessel's approved log.\nEmployees who expect to be late or absent must notify their reporting manager as soon as reasonably possible\nand, where practicable, before the start of the scheduled shift. Repeated unexplained absence may be referred to\nHuman Resources for review.\n3. Salary administration\nFor this demonstration dataset, salaries are processed monthly. The normal payroll date is the last working day of\neach calendar month. If the normal payroll date falls on a public holiday or a non-working day, payment is\nnormally processed on the preceding working day.\nIndividual salary amounts, bank details, deductions and payslips are confidential employee-specific information.\nGeneral policy questions may be answered from this handbook, but an assistant must not infer or disclose an\nindividual's salary or personal payroll data.\n4. Leave administration"
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 1.0942,
+          "excerpt": "General policy questions may be answered from this handbook, but an assistant must not infer or disclose an\nindividual's salary or personal payroll data.\n4. Leave administration\nAnnual leave entitlement and application rules are described in the separate Leave Policy. Employees should\nsubmit leave requests through the designated HR process and obtain approval before making non-emergency\ntravel arrangements.\n5. Employee conduct and respectful workplace\nEmployees are expected to act professionally, treat colleagues and customers respectfully, protect company\nproperty, and avoid harassment, discrimination, retaliation or conflicts of interest. Concerns may be raised with a\nreporting manager or Human Resources.\n6. Medical benefits and reimbursements\nThe general medical benefit framework is described in the separate Medical Benefits Policy. Eligibility, limits,\nexclusions and claim documentation must be checked against that policy. This handbook does not establish a"
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 3,
+          "similarity_score": 1.2815,
+          "excerpt": "exclusions and claim documentation must be checked against that policy. This handbook does not establish a\ngeneral travel or business-expense reimbursement entitlement.\n7. Questions and policy interpretation\nEmployees should contact Human Resources for clarification when a situation is not covered by the published\npolicies. The company may update policies from time to time; employees should refer to the latest approved\nversion."
+        }
+      ],
+      "reasoning": "Direct semantic document match found (best distance: 0.9433).",
+      "missing_information": null
+    },
+    {
+      "topic": "Medical benefits, health coverage, and healthcare reimbursement rules",
+      "status": "supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 0.8191,
+          "excerpt": "General policy questions may be answered from this handbook, but an assistant must not infer or disclose an\nindividual's salary or personal payroll data.\n4. Leave administration\nAnnual leave entitlement and application rules are described in the separate Leave Policy. Employees should\nsubmit leave requests through the designated HR process and obtain approval before making non-emergency\ntravel arrangements.\n5. Employee conduct and respectful workplace\nEmployees are expected to act professionally, treat colleagues and customers respectfully, protect company\nproperty, and avoid harassment, discrimination, retaliation or conflicts of interest. Concerns may be raised with a\nreporting manager or Human Resources.\n6. Medical benefits and reimbursements\nThe general medical benefit framework is described in the separate Medical Benefits Policy. Eligibility, limits,\nexclusions and claim documentation must be checked against that policy. This handbook does not establish a"
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 3,
+          "similarity_score": 1.1268,
+          "excerpt": "exclusions and claim documentation must be checked against that policy. This handbook does not establish a\ngeneral travel or business-expense reimbursement entitlement.\n7. Questions and policy interpretation\nEmployees should contact Human Resources for clarification when a situation is not covered by the published\npolicies. The company may update policies from time to time; employees should refer to the latest approved\nversion."
+        }
+      ],
+      "reasoning": "Direct semantic document match found (best distance: 0.8191).",
+      "missing_information": null
+    },
+    {
+      "topic": "Attendance policies, shift patterns, and working hours",
+      "status": "partially_supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 1,
+          "similarity_score": 1.0201,
+          "excerpt": "record attendance using the company attendance system or the vessel's approved log.\nEmployees who expect to be late or absent must notify their reporting manager as soon as reasonably possible\nand, where practicable, before the start of the scheduled shift. Repeated unexplained absence may be referred to\nHuman Resources for review.\n3. Salary administration\nFor this demonstration dataset, salaries are processed monthly. The normal payroll date is the last working day of\neach calendar month. If the normal payroll date falls on a public holiday or a non-working day, payment is\nnormally processed on the preceding working day.\nIndividual salary amounts, bank details, deductions and payslips are confidential employee-specific information.\nGeneral policy questions may be answered from this handbook, but an assistant must not infer or disclose an\nindividual's salary or personal payroll data.\n4. Leave administration"
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.1627,
+          "excerpt": "DEMO DOCUMENT — Fictional sample policy for ForgeAI testing\nPage 1\nEmployee HR Policy Handbook\nOceanic Services Ltd. | Demonstration dataset | Version 1.0\n1. Purpose and scope\nThis handbook describes general workplace policies for the fictional company Oceanic Services Ltd. It applies to\nshore-based employees and vessel crew unless a section states otherwise. Where a signed employment\nagreement or applicable law provides a more specific or more protective requirement, that requirement takes\nprecedence.\n2. Working hours and attendance\nStandard shore-office hours are 09:30 to 18:00, Monday through Friday, with a one-hour meal break. Vessel crew\nworking hours are determined by the approved vessel roster and operational requirements. Employees must\nrecord attendance using the company attendance system or the vessel's approved log.\nEmployees who expect to be late or absent must notify their reporting manager as soon as reasonably possible"
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 1.331,
+          "excerpt": "General policy questions may be answered from this handbook, but an assistant must not infer or disclose an\nindividual's salary or personal payroll data.\n4. Leave administration\nAnnual leave entitlement and application rules are described in the separate Leave Policy. Employees should\nsubmit leave requests through the designated HR process and obtain approval before making non-emergency\ntravel arrangements.\n5. Employee conduct and respectful workplace\nEmployees are expected to act professionally, treat colleagues and customers respectfully, protect company\nproperty, and avoid harassment, discrimination, retaliation or conflicts of interest. Concerns may be raised with a\nreporting manager or Human Resources.\n6. Medical benefits and reimbursements\nThe general medical benefit framework is described in the separate Medical Benefits Policy. Eligibility, limits,\nexclusions and claim documentation must be checked against that policy. This handbook does not establish a"
+        }
+      ],
+      "reasoning": "Marginal semantic match found (best distance: 1.0201). Partial information only.",
+      "missing_information": "In-depth operational specifications or procedure details."
+    },
+    {
+      "topic": "Expense reimbursement processes and eligible business expenses",
+      "status": "supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 3,
+          "similarity_score": 0.9409,
+          "excerpt": "exclusions and claim documentation must be checked against that policy. This handbook does not establish a\ngeneral travel or business-expense reimbursement entitlement.\n7. Questions and policy interpretation\nEmployees should contact Human Resources for clarification when a situation is not covered by the published\npolicies. The company may update policies from time to time; employees should refer to the latest approved\nversion."
+        },
+        {
+          "source_file": "HR_Policy.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 1.3296,
+          "excerpt": "General policy questions may be answered from this handbook, but an assistant must not infer or disclose an\nindividual's salary or personal payroll data.\n4. Leave administration\nAnnual leave entitlement and application rules are described in the separate Leave Policy. Employees should\nsubmit leave requests through the designated HR process and obtain approval before making non-emergency\ntravel arrangements.\n5. Employee conduct and respectful workplace\nEmployees are expected to act professionally, treat colleagues and customers respectfully, protect company\nproperty, and avoid harassment, discrimination, retaliation or conflicts of interest. Concerns may be raised with a\nreporting manager or Human Resources.\n6. Medical benefits and reimbursements\nThe general medical benefit framework is described in the separate Medical Benefits Policy. Eligibility, limits,\nexclusions and claim documentation must be checked against that policy. This handbook does not establish a"
+        }
+      ],
+      "reasoning": "Direct semantic document match found (best distance: 0.9409).",
+      "missing_information": null
+    }
+  ],
+  "guaranteed_capabilities": [
+    "Annual leave entitlements, accruals, and request procedures",
+    "Salary guidelines, pay schedules, and compensation policies",
+    "Medical benefits, health coverage, and healthcare reimbursement rules",
+    "Expense reimbursement processes and eligible business expenses"
+  ],
+  "partially_supported_topics": [
+    "Company HR policies and code of conduct outlined in official documentation",
+    "Attendance policies, shift patterns, and working hours"
+  ],
+  "blocked_unsupported_topics": [],
+  "recommendations": [
+    "For 'Company HR policies and code of conduct outlined in official documentation': Upload documentation addressing: In-depth operational specifications or procedure details.",
+    "For 'Attendance policies, shift patterns, and working hours': Upload documentation addressing: In-depth operational specifications or procedure details."
+  ],
+  "evaluated_at": "2026-11-26T17:35:49.229113"
+}

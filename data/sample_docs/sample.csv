@@ -1,0 +1,5 @@
+id,component,status,maintenance_cycle,temperature_celsius,description
+101,Hydraulic Pump A,Operational,30 days,68.5,Primary hydraulic pressure generator for robotic assembly arm 1.
+102,Coolant Valve B,Warning,14 days,82.3,Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent.
+103,Induction Motor C,Operational,60 days,55.0,Main spindle drive motor operating within normal vibration limits.
+104,Emergency Brake D,Critical,7 days,91.2,Thermal sensor indicates overheating during high-speed deceleration tests.

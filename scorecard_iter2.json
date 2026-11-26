@@ -1,0 +1,86 @@
+{
+  "overall_evaluation": {
+    "overall_composite_score": 0.7221,
+    "overall_pass_rate": 0.6818,
+    "total_test_cases": 22,
+    "total_passed": 15,
+    "total_failed": 7,
+    "metric_averages": {
+      "factual_correctness": 0.6277,
+      "grounding_accuracy": 0.6432,
+      "expected_facts_coverage": 0.6932,
+      "refusal_accuracy": 0.9409,
+      "citation_correctness": 0.8455
+    }
+  },
+  "category_scorecards": {
+    "answerable": {
+      "category": "answerable",
+      "total_cases": 6,
+      "passed_cases": 5,
+      "failed_cases": 1,
+      "pass_rate": 0.8333,
+      "avg_composite_score": 0.8316,
+      "avg_factual_correctness": 0.6667,
+      "avg_grounding_accuracy": 0.7412,
+      "avg_expected_facts_coverage": 0.8333,
+      "avg_refusal_accuracy": 1.0,
+      "avg_citation_correctness": 1.0
+    },
+    "multi_document": {
+      "category": "multi_document",
+      "total_cases": 6,
+      "passed_cases": 4,
+      "failed_cases": 2,
+      "pass_rate": 0.6667,
+      "avg_composite_score": 0.6887,
+      "avg_factual_correctness": 0.635,
+      "avg_grounding_accuracy": 0.5846,
+      "avg_expected_facts_coverage": 0.7083,
+      "avg_refusal_accuracy": 0.8333,
+      "avg_citation_correctness": 0.7667
+    },
+    "ambiguous": {
+      "category": "ambiguous",
+      "total_cases": 5,
+      "passed_cases": 1,
+      "failed_cases": 4,
+      "pass_rate": 0.2,
+      "avg_composite_score": 0.3888,
+      "avg_factual_correctness": 0.2,
+      "avg_grounding_accuracy": 0.2391,
+      "avg_expected_facts_coverage": 0.2,
+      "avg_refusal_accuracy": 1.0,
+      "avg_citation_correctness": 0.6
+    },
+    "out_of_scope": {
+      "category": "out_of_scope",
+      "total_cases": 5,
+      "passed_cases": 5,
+      "failed_cases": 0,
+      "pass_rate": 1.0,
+      "avg_composite_score": 0.964,
+      "avg_factual_correctness": 1.0,
+      "avg_grounding_accuracy": 1.0,
+      "avg_expected_facts_coverage": 1.0,
+      "avg_refusal_accuracy": 0.94,
+      "avg_citation_correctness": 1.0
+    }
+  },
+  "category_scores": {
+    "answerable": 0.8316,
+    "multi_document": 0.6887,
+    "ambiguous": 0.3888,
+    "out_of_scope": 0.964
+  },
+  "failed_test_ids": [
+    "EVAL-004",
+    "EVAL-011",
+    "EVAL-012",
+    "EVAL-013",
+    "EVAL-015",
+    "EVAL-016",
+    "EVAL-017"
+  ],
+  "failed_test_count": 7
+}

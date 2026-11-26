@@ -1,0 +1,41 @@
+
+# LLM and orchestration
+langchain
+langchain-core
+langchain-groq
+langgraph
+langchain-community
+langchain-text-splitters
+
+# Embeddings and vector database
+sentence-transformers
+langchain-huggingface
+chromadb
+langchain-chroma
+
+# Document processing
+pymupdf
+pandas
+openpyxl
+
+# Backend
+fastapi
+uvicorn[standard]
+python-multipart
+httpx
+
+# Data validation and configuration
+pydantic
+python-dotenv
+pyyaml
+
+# Frontend
+streamlit
+
+# Testing
+pytest
+pytest-asyncio
+
+# Utilities
+tenacity
+rich

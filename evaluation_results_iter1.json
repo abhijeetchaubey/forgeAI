@@ -1,0 +1,2531 @@
+{
+  "summary": {
+    "total_test_cases": 22,
+    "total_passed": 12,
+    "total_failed": 10,
+    "overall_pass_rate": 0.5455,
+    "overall_composite_score": 0.6468
+  },
+  "individual_results": [
+    {
+      "test_id": "EVAL-001",
+      "question": "What is the maintenance cycle for Hydraulic Pump A?",
+      "category": "answerable",
+      "generated_answer": "**Summary**  \nHydraulic Pump\u202fA is scheduled for routine maintenance every 30\u202fdays.\n\n**Steps**  \n1. Locate the maintenance record for Hydraulic Pump\u202fA (ID\u202f101).  \n2. Note the listed maintenance cycle: **30\u202fdays**\u202f\u2014 this is the interval after which preventive service should be performed.  \n\n**Safety Check**  \n- Ensure the pump is taken offline and depressurized before any maintenance activity, and confirm the next service date does not exceed the 30\u2011day interval.  \n\n[source: sample.csv, page: 1]",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 0.9621,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 0.9621,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.1227,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 1\nOperating pressure: 120 bar.\nHydraulic pump primary line operational."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.1227,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 1\nOperating pressure: 120 bar.\nHydraulic pump primary line operational."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.3609,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.3609,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "30 days"
+      ],
+      "expected_sources": [
+        "sample.csv"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must state the maintenance cycle exactly as '30 days' and cite the source as sample.csv. Any deviation in number or unit is incorrect.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "sample.pdf",
+          "source: sample.csv"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "30 days"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.3064,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 75,
+          "cited_sources": [
+            "sample.csv",
+            "sample.pdf",
+            "source: sample.csv"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 0.75,
+        "refusal_score": 1.0,
+        "hallucination_detected": true,
+        "critique": "The answer correctly states the maintenance cycle as '30 days' and includes a citation to sample.csv, satisfying the factual requirement. However, the citation list also references sample.pdf, which is not part of the expected source and constitutes a hallucination, reducing the grounding score.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 0.75,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The answer correctly states the maintenance cycle as '30 days' and includes a citation to sample.csv, satisfying the factual requirement. However, the citation list also references sample.pdf, which is not part of the expected source and constitutes a hallucination, reducing the grounding score.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.75,
+        "grounding_accuracy": 0.5282,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.8431,
+        "status": "PASS",
+        "verdict_reason": "Score 0.84 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-002",
+      "question": "What is the temperature reading for Emergency Brake D?",
+      "category": "answerable",
+      "generated_answer": "**Summary**  \nThe latest telemetry for Emergency Brake\u202fD shows an elevated temperature.\n\n**Temperature reading**  \n- Emergency Brake\u202fD temperature: **91.2\u202f\u00b0C**\u202f[ source: sample.csv, page: 1 ]\n\n**Safety note**  \n- This exceeds the emergency cutoff temperature of 85\u202f\u00b0C defined for the cell, indicating that an automatic thermal shutdown may be triggered. Verify the brake\u2019s cooling system and consider immediate inspection per safety protocols.",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.5441,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.5441,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 1.0301,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 1.0301,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.1703,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.1703,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "91.2 Celsius"
+      ],
+      "expected_sources": [
+        "sample.csv"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must provide the temperature value 91.2 followed by the unit Celsius, referencing sample.csv. Incorrect values or missing unit are penalized.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "sample.pdf",
+          "source: sample.csv"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "91.2 Celsius"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.4744,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 64,
+          "cited_sources": [
+            "sample.csv",
+            "sample.pdf",
+            "source: sample.csv"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The answer correctly provides the temperature 91.2\u202f\u00b0C with the required unit and cites sample.csv, satisfying the rubric. The extra citations to unrelated sources are unnecessary but do not introduce factual errors. No refusal was needed and none was given.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 1.0,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": false,\n  \"critique\": \"The answer correctly provides the temperature 91.2\u202f\u00b0C with the required unit and cites sample.csv, satisfying the rubric. The extra citations to unrelated sources are unnecessary but do not introduce factual errors. No refusal was needed and none was given.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.7372,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.9474,
+        "status": "PASS",
+        "verdict_reason": "Score 0.95 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-003",
+      "question": "According to the specification PDF, what is the emergency cutoff temperature?",
+      "category": "answerable",
+      "generated_answer": "The emergency cutoff temperature specified for the ForgeAI robotic cell is **85\u202f\u00b0C**\u3010source: sample.pdf, page: 2\u3011.",
+      "citations": [
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.8018,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.8018,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.9065,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.9065,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.1547,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.1547,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "85 Celsius"
+      ],
+      "expected_sources": [
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 2",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must be exactly '85 Celsius' and attribute the information to sample.pdf page 2. Any other temperature or missing citation is wrong.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "sample.pdf"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "85 Celsius"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.8727,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 16,
+          "cited_sources": [
+            "sample.csv",
+            "sample.pdf"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 0.7,
+        "refusal_score": 1.0,
+        "hallucination_detected": true,
+        "critique": "The answer correctly states the emergency cutoff temperature as 85\u202f\u00b0C and cites sample.pdf page 2, satisfying the factual requirement. However, the reported citations list includes irrelevant entries (sample.csv) that were not needed and are not supported by the question, indicating a grounding hallucination. The extra citations reduce the grounding score despite the correct answer content.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 0.7,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The answer correctly states the emergency cutoff temperature as 85\u202f\u00b0C and cites sample.pdf page 2, satisfying the factual requirement. However, the reported citations list includes irrelevant entries (sample.csv) that were not needed and are not supported by the question, indicating a grounding hallucination. The extra citations reduce the grounding score despite the correct answer content.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.75,
+        "grounding_accuracy": 0.7863,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.8948,
+        "status": "PASS",
+        "verdict_reason": "Score 0.89 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-004",
+      "question": "In the operational manual, at what temperature does an automated shutoff trigger?",
+      "category": "answerable",
+      "generated_answer": "**Answer:**  \nThe operational manual states that an automated shutoff is triggered when the temperature exceeds **85\u202f\u00b0C**\u3010source: sample.txt, page: 1\u3011.",
+      "citations": [
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.8087,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.8087,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.987,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.987,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.0032,
+          "excerpt": "ForgeAI Factory Operational Manual: Safety Protocols & Robotic Cell Operations.\n\nChapter 1: Overview and Architecture\nThe automated manufacturing floor consists of three high-precision robotic workcells.\nEach cell is continuously monitored by IoT telemetry sensors reporting pressure, vibration, and temperature.\nStandard operating procedures require daily calibration of all pneumatic actuators and weekly inspection of safety interlocks.\n\nChapter 2: Thermal Management and Emergency Cutoff\nIn the event of an anomalous temperature spike exceeding 85 degrees Celsius, automated shutoff triggers immediately.\nOperators must inspect the auxiliary cooling loop and ensure coolant valve clearance before manual restart.\nAll shutdown events must be logged into the central factory ledger with telemetry snapshots."
+        },
+        {
+          "source": "sample.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.0032,
+          "excerpt": "ForgeAI Factory Operational Manual: Safety Protocols & Robotic Cell Operations.\n\nChapter 1: Overview and Architecture\nThe automated manufacturing floor consists of three high-precision robotic workcells.\nEach cell is continuously monitored by IoT telemetry sensors reporting pressure, vibration, and temperature.\nStandard operating procedures require daily calibration of all pneumatic actuators and weekly inspection of safety interlocks.\n\nChapter 2: Thermal Management and Emergency Cutoff\nIn the event of an anomalous temperature spike exceeding 85 degrees Celsius, automated shutoff triggers immediately.\nOperators must inspect the auxiliary cooling loop and ensure coolant valve clearance before manual restart.\nAll shutdown events must be logged into the central factory ledger with telemetry snapshots."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "85 degrees Celsius"
+      ],
+      "expected_sources": [
+        "sample.txt"
+      ],
+      "expected_page_number": "page 1",
+      "should_refuse": false,
+      "evaluation_criteria": "The response must state '85 degrees Celsius' and cite the manual (sample.txt page 1). The phrasing must match the temperature value; variations like '85\u00b0C' are acceptable if the value is correct.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.txt",
+          "sample.csv",
+          "sample.pdf"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 0.0,
+        "facts_covered": [],
+        "facts_missing": [
+          "85 degrees Celsius"
+        ],
+        "grounding_score": 0.56,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 20,
+          "cited_sources": [
+            "sample.txt",
+            "sample.csv",
+            "sample.pdf"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 0,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 0.2,
+        "refusal_score": 1.0,
+        "hallucination_detected": true,
+        "critique": "The answer correctly states the temperature (85\u202f\u00b0C) and includes the required citation to sample.txt page 1, satisfying factual and refusal criteria. However, it lists multiple unrelated citations (sample.pdf, sample.csv) that do not support the claim, indicating hallucinated grounding and reducing the overall grounding score.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 0.2,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The answer correctly states the temperature (85\u202f\u00b0C) and includes the required citation to sample.txt page 1, satisfying factual and refusal criteria. However, it lists multiple unrelated citations (sample.pdf, sample.csv) that do not support the claim, indicating hallucinated grounding and reducing the overall grounding score.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.25,
+        "grounding_accuracy": 0.38,
+        "expected_facts_coverage": 0.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.4885,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.49 is below pass threshold 0.70. | Missing facts: 85 degrees Celsius"
+      },
+      "passed": false,
+      "failure_reason": "Score 0.49 is below pass threshold 0.70. | Missing facts: 85 degrees Celsius"
+    },
+    {
+      "test_id": "EVAL-005",
+      "question": "Which component has a status of \"Warning\"?",
+      "category": "answerable",
+      "generated_answer": "**Component with status \u201cWarning\u201d**\n\n- **Coolant Valve\u202fB** (id\u202f102) \u2013 status listed as *Warning* in the records.\u202f[source: sample.csv, page: 1]",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.0981,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.0981,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.1475,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.1475,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.2362,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.2362,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Coolant Valve B"
+      ],
+      "expected_sources": [
+        "sample.csv"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must name the component exactly as 'Coolant Valve B' and reference sample.csv. Any other component name is incorrect.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "source: sample.csv"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Coolant Valve B"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.7385,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 22,
+          "cited_sources": [
+            "sample.csv",
+            "source: sample.csv"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The answer correctly names the component as 'Coolant Valve B' and provides a valid citation to sample.csv. No refusal was needed and no hallucinations are present.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 1.0,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": false,\n  \"critique\": \"The answer correctly names the component as 'Coolant Valve B' and provides a valid citation to sample.csv. No refusal was needed and no hallucinations are present.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.8693,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.9739,
+        "status": "PASS",
+        "verdict_reason": "Score 0.97 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-006",
+      "question": "What is the operating pressure specified in the robotic cell specification?",
+      "category": "answerable",
+      "generated_answer": "The operating pressure specified for the robotic cell is **120\u202fbar**.\u202f[source: sample.pdf, page: 1]",
+      "citations": [
+        {
+          "source": "sample.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.5716,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 1\nOperating pressure: 120 bar.\nHydraulic pump primary line operational."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.5716,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 1\nOperating pressure: 120 bar.\nHydraulic pump primary line operational."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 1.0121,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 1.0121,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.1093,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.1093,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "120 bar"
+      ],
+      "expected_sources": [
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 1",
+      "should_refuse": false,
+      "evaluation_criteria": "The response must give the pressure value '120 bar' and cite sample.pdf page 1. Incorrect units or values are penalized.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "sample.pdf",
+          "source: sample.pdf"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "120 bar"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.75,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 15,
+          "cited_sources": [
+            "sample.csv",
+            "sample.pdf",
+            "source: sample.pdf"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 0.75,
+        "refusal_score": 1.0,
+        "hallucination_detected": true,
+        "critique": "The answer provides the correct pressure value (120\u202fbar) and cites the required source (sample.pdf p.1), satisfying factual and refusal criteria. However, the reported citation list includes irrelevant entries (sample.pdf p.2 and sample.csv) that are not needed and appear fabricated, lowering the grounding quality and indicating hallucination.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 0.75,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The answer provides the correct pressure value (120\u202fbar) and cites the required source (sample.pdf p.1), satisfying factual and refusal criteria. However, the reported citation list includes irrelevant entries (sample.pdf p.2 and sample.csv) that are not needed and appear fabricated, lowering the grounding quality and indicating hallucination.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.75,
+        "grounding_accuracy": 0.75,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.8875,
+        "status": "PASS",
+        "verdict_reason": "Score 0.89 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-007",
+      "question": "Identify any components whose temperature exceeds the emergency cutoff temperature defined in the PDF.",
+      "category": "multi_document",
+      "generated_answer": "**Summary**  \nThe emergency cutoff temperature for the cell is **85\u202f\u00b0C**\u202f[ source: sample.pdf, page: 2 ]. Among the logged components, **Emergency Brake\u202fD** recorded a temperature of **91.2\u202f\u00b0C**, which exceeds this threshold\u202f[ source: sample.csv, page: 1 ]. **Coolant Valve\u202fB** recorded 82.3\u202f\u00b0C, which is below the cutoff\u202f[ source: sample.csv, page: 1 ].\n\n**Steps to address the over\u2011temperature condition**\n\n1. **Confirm the reading** \u2013 Verify the thermal sensor output for Emergency Brake\u202fD against a calibrated reference thermometer.  \n2. **Initiate emergency shutdown** \u2013 Engage the automated thermal shutdown protocol (active per specification) to stop the brake operation immediately.  \n3. **Inspect the brake assembly** \u2013 Check for blocked cooling paths, worn friction material, or sensor drift that could cause overheating.  \n4. **Schedule corrective maintenance** \u2013 Since the component is marked *Critical* and its maintenance cycle is 7\u202fdays, create a high\u2011priority work order to service Emergency Brake\u202fD before the next scheduled cycle.  \n5. **Document the event** \u2013 Log the temperature exceedance, actions taken, and any sensor calibration results in the maintenance system.\n\n**Safety checks / ticket creation**\n\n- Verify that all personnel are clear of the brake area before shutdown.  \n- Record the incident in the safety incident log with reference to the emergency cutoff breach.  \n- Generate a maintenance ticket flagged as **Critical \u2013 Temperature Exceedance** for Emergency Brake\u202fD.  \n\n*All statements are directly supported by the provided documents.*",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.8688,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.8688,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.937,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.937,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.2053,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.2053,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Component: Emergency Brake D",
+        "Temperature: 91.2 Celsius",
+        "Status: Critical"
+      ],
+      "expected_sources": [
+        "sample.csv",
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 2",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must list each component whose temperature > 85\u00b0C (cutoff from sample.pdf page 2). For each, provide component name, temperature with unit, and status as recorded in sample.csv. Only Emergency Brake D meets the condition.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "sample.pdf",
+          "source: sample.pdf",
+          "source: sample.csv"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 0.6667,
+        "facts_covered": [
+          "Component: Emergency Brake D",
+          "Temperature: 91.2 Celsius"
+        ],
+        "facts_missing": [
+          "Status: Critical"
+        ],
+        "grounding_score": 0.4371,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 234,
+          "cited_sources": [
+            "sample.csv",
+            "sample.pdf",
+            "source: sample.pdf",
+            "source: sample.csv"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 2,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The answer correctly identifies Emergency Brake D as the only component exceeding the 85\u202f\u00b0C cutoff, provides the correct temperature and status, and cites the appropriate PDF and CSV sources. Extra contextual steps do not detract from correctness.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 1.0,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": false,\n  \"critique\": \"The answer correctly identifies Emergency Brake D as the only component exceeding the 85\u202f\u00b0C cutoff, provides the correct temperature and status, and cites the appropriate PDF and CSV sources. Extra contextual steps do not detract from correctness.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.8334,
+        "grounding_accuracy": 0.7186,
+        "expected_facts_coverage": 0.6667,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.8354,
+        "status": "PASS",
+        "verdict_reason": "Score 0.84 meets pass threshold 0.70. | Missing facts: Status: Critical"
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-008",
+      "question": "Which components are due for maintenance within the next 15 days, assuming today is day 0?",
+      "category": "multi_document",
+      "generated_answer": "**Summary**  \nBased on the maintenance\u2011cycle intervals in the CSV data, the components whose next service falls within the next\u202f15\u202fdays (day\u202f0\u202f\u2192\u202fday\u202f15) are:\n\n1. **Emergency Brake\u202fD** \u2013 maintenance cycle\u202f7\u202fdays \u2192 due on day\u202f7.  \n2. **Coolant Valve\u202fB** \u2013 maintenance cycle\u202f14\u202fdays \u2192 due on day\u202f14.  \n\nThe **Induction Motor\u202fC** has a 60\u2011day cycle, so its next maintenance is beyond the 15\u2011day window.  \n\n**Citations**  \n- Emergency Brake\u202fD: maintenance_cycle\u202f7\u202fdays\u202f[source: sample.csv, page: 1]  \n- Coolant Valve\u202fB: maintenance_cycle\u202f14\u202fdays\u202f[source: sample.csv, page: 1]  \n- Induction Motor\u202fC: maintenance_cycle\u202f60\u202fdays\u202f[source: sample.csv, page: 1]",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.214,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.214,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.2855,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.2855,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.2881,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.2881,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Coolant Valve B \u2013 maintenance_cycle: 14 days",
+        "Emergency Brake D \u2013 maintenance_cycle: 7 days"
+      ],
+      "expected_sources": [
+        "sample.csv",
+        "sample.txt"
+      ],
+      "expected_page_number": "page 1",
+      "should_refuse": false,
+      "evaluation_criteria": "The response must identify components whose maintenance_cycle \u2264 15 days using data from sample.csv and reference the manual (sample.txt page 1) to justify the timeframe. List both components with their exact cycle values.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 0.6,
+        "citation_passed": false,
+        "cited_sources": [
+          "sample.csv",
+          "source: sample.csv"
+        ],
+        "missing_sources": [
+          "sample.txt"
+        ],
+        "page_match": true,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Coolant Valve B \u2013 maintenance_cycle: 14 days",
+          "Emergency Brake D \u2013 maintenance_cycle: 7 days"
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.6792,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 106,
+          "cited_sources": [
+            "sample.csv",
+            "source: sample.csv"
+          ],
+          "missing_sources": [
+            "sample.txt"
+          ],
+          "page_match": true,
+          "facts_covered_count": 2,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 0.5,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The answer correctly lists the two components (Emergency Brake D and Coolant Valve B) with their exact maintenance cycles, matching the expected facts. However, it only cites sample.csv and omits the required reference to sample.txt (page 1), violating the grounding requirement. No refusal was needed and none was given. No hallucinated information was present.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 0.5,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": false,\n  \"critique\": \"The answer correctly lists the two components (Emergency Brake D and Coolant Valve B) with their exact maintenance cycles, matching the expected facts. However, it only cites sample.csv and omits the required reference to sample.txt (page 1), violating the grounding requirement. No refusal was needed and none was given. No hallucinated information was present.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.5896,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 0.6,
+        "composite_score": 0.8579,
+        "status": "PASS",
+        "verdict_reason": "Score 0.86 meets pass threshold 0.70. | Missing citations: sample.txt"
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-009",
+      "question": "Compare the temperature of the component with the highest temperature to the emergency cutoff temperature and state whether it is above or below the cutoff.",
+      "category": "multi_document",
+      "generated_answer": "**Summary**  \nThe component with the highest recorded temperature is **Emergency Brake\u202fD** at **91.2\u202f\u00b0C**, which exceeds the system\u2019s emergency thermal cutoff of **85\u202f\u00b0C**.\n\n**Comparison steps**\n\n1. **Identify the highest temperature** \u2013 Emergency Brake\u202fD reports 91.2\u202f\u00b0C in the CSV log.  \n   *[source: sample.csv, page: 1]*  \n2. **Locate the emergency cutoff temperature** \u2013 The robotic cell specification sets the cutoff at 85\u202f\u00b0C.  \n   *[source: sample.pdf, page: 2]*  \n3. **Compare values** \u2013 91.2\u202f\u00b0C\u202f>\u202f85\u202f\u00b0C, therefore the temperature is **above** the cutoff threshold.\n\n**Safety check / required action**  \n- The component is marked **Critical** and is operating above the emergency cutoff; immediate inspection and shutdown of the affected system are required per standard safety protocols.  \n\n*All statements are directly supported by the provided documents.*",
+      "citations": [
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.9085,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.9085,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.0356,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.0356,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.3,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.3,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Highest temperature component: Emergency Brake D",
+        "Temperature: 91.2 Celsius",
+        "Emergency cutoff: 85 Celsius",
+        "Result: above"
+      ],
+      "expected_sources": [
+        "sample.csv",
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 2",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must correctly identify Emergency Brake D as the hottest component, provide its temperature, cite the cutoff from sample.pdf page 2, and explicitly state that the temperature is 'above' the cutoff.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "sample.pdf",
+          "source: sample.pdf",
+          "source: sample.csv"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 0.75,
+        "facts_covered": [
+          "Highest temperature component: Emergency Brake D",
+          "Temperature: 91.2 Celsius",
+          "Emergency cutoff: 85 Celsius"
+        ],
+        "facts_missing": [
+          "Result: above"
+        ],
+        "grounding_score": 0.5316,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 126,
+          "cited_sources": [
+            "sample.csv",
+            "sample.pdf",
+            "source: sample.pdf",
+            "source: sample.csv"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 3,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The answer correctly identifies Emergency Brake D as the hottest component, provides the correct temperature (91.2\u202f\u00b0C), cites the emergency cutoff (85\u202f\u00b0C) from sample.pdf page 2, and explicitly states the temperature is above the cutoff. Citations are present and accurate. No refusal was needed and no hallucinations were detected.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 1.0,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": false,\n  \"critique\": \"The answer correctly identifies Emergency Brake D as the hottest component, provides the correct temperature (91.2\u202f\u00b0C), cites the emergency cutoff (85\u202f\u00b0C) from sample.pdf page 2, and explicitly states the temperature is above the cutoff. Citations are present and accurate. No refusal was needed and no hallucinations were detected.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.875,
+        "grounding_accuracy": 0.7658,
+        "expected_facts_coverage": 0.75,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.8719,
+        "status": "PASS",
+        "verdict_reason": "Score 0.87 meets pass threshold 0.70. | Missing facts: Result: above"
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-010",
+      "question": "According to the manual, what actions must be taken when a temperature exceeds the emergency cutoff, and which component in the CSV currently exceeds that threshold?",
+      "category": "multi_document",
+      "generated_answer": "**Summary**  \nThe manual specifies an emergency cutoff at **85\u202f\u00b0C** with automatic thermal\u2011shutdown procedures. The CSV log shows **Emergency Brake\u202fD** operating at **91.2\u202f\u00b0C**, which exceeds this cutoff.\n\n**Required actions when temperature\u202f>\u202f85\u202f\u00b0C**  \n1. **Initiate the automated thermal shutdown** as defined in the specification.  \n2. Verify that the shutdown has engaged and that power to the affected subsystem is removed.  \n3. Log the event and schedule immediate inspection of the overheating component.  \n\n**Component currently exceeding the cutoff**  \n- **Component:** Emergency Brake\u202fD  \n- **Recorded temperature:** 91.2\u202f\u00b0C (status\u202f=\u202fCritical)  \n- **Why it matters:** 91.2\u202f\u00b0C\u202f>\u202f85\u202f\u00b0C emergency cutoff.  \n\n**Safety checks / next steps**  \n- Confirm that the automated shutdown has completed before any manual intervention.  \n- Issue a maintenance ticket referencing the component ID\u202f=\u202f104 and the over\u2011temperature condition.  \n- Follow the critical\u2011status maintenance cycle (every\u202f7\u202fdays) for Emergency Brake\u202fD.  \n\n**Citations**  \n- Emergency cutoff temperature and automated shutdown protocol: [source: sample.pdf, page: 2]  \n- Emergency Brake\u202fD temperature reading (91.2\u202f\u00b0C) and status: [source: sample.csv, page: 1]",
+      "citations": [
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.9204,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.9204,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.9752,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.9752,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.179,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.179,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Actions: inspect the auxiliary cooling loop, ensure coolant valve clearance, log the event into the central factory ledger with telemetry snapshots",
+        "Component exceeding cutoff: Emergency Brake D",
+        "Temperature: 91.2 Celsius"
+      ],
+      "expected_sources": [
+        "sample.txt",
+        "sample.csv",
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 1, page 2",
+      "should_refuse": false,
+      "evaluation_criteria": "The response must enumerate the three actions described in Chapter 2 of sample.txt, identify Emergency Brake D from sample.csv as the component above the 85\u00b0C cutoff (sample.pdf page 2), and include its temperature. All three sources must be referenced.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 0.7333,
+        "citation_passed": false,
+        "cited_sources": [
+          "sample.csv",
+          "sample.pdf",
+          "source: sample.pdf",
+          "source: sample.csv"
+        ],
+        "missing_sources": [
+          "sample.txt"
+        ],
+        "page_match": true,
+        "facts_coverage_score": 0.6667,
+        "facts_covered": [
+          "Component exceeding cutoff: Emergency Brake D",
+          "Temperature: 91.2 Celsius"
+        ],
+        "facts_missing": [
+          "Actions: inspect the auxiliary cooling loop, ensure coolant valve clearance, log the event into the central factory ledger with telemetry snapshots"
+        ],
+        "grounding_score": 0.5948,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 176,
+          "cited_sources": [
+            "sample.csv",
+            "sample.pdf",
+            "source: sample.pdf",
+            "source: sample.csv"
+          ],
+          "missing_sources": [
+            "sample.txt"
+          ],
+          "page_match": true,
+          "facts_covered_count": 2,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.4,
+        "grounding_score": 0.2,
+        "refusal_score": 1.0,
+        "hallucination_detected": true,
+        "critique": "The answer correctly identifies Emergency Brake D and its temperature (91.2\u202f\u00b0C), but the three required actions are incorrect (they do not match the manual's actions of inspecting the auxiliary cooling loop, ensuring coolant valve clearance, and logging to the central factory ledger). The response fails to cite sample.txt for the actions and omits any reference to it, violating the grounding requirement. Thus, factual content is partially correct, grounding is insufficient, and hallucinated actions are present.",
+        "raw_response": "{\n  \"factual_score\": 0.4,\n  \"grounding_score\": 0.2,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The answer correctly identifies Emergency Brake D and its temperature (91.2\u202f\u00b0C), but the three required actions are incorrect (they do not match the manual's actions of inspecting the auxiliary cooling loop, ensuring coolant valve clearance, and logging to the central factory ledger). The response fails to cite sample.txt for the actions and omits any reference to it, violating the grounding requirement. Thus, factual content is partially correct, grounding is insufficient, and hallucinated actions are present.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.2833,
+        "grounding_accuracy": 0.3974,
+        "expected_facts_coverage": 0.6667,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 0.7333,
+        "composite_score": 0.5936,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.59 is below pass threshold 0.70. | Missing facts: Actions: inspect the auxiliary cooling loop, ensure coolant valve clearance, log the event into the central factory ledger with telemetry snapshots | Missing citations: sample.txt"
+      },
+      "passed": false,
+      "failure_reason": "Score 0.59 is below pass threshold 0.70. | Missing facts: Actions: inspect the auxiliary cooling loop, ensure coolant valve clearance, log the event into the central factory ledger with telemetry snapshots | Missing citations: sample.txt"
+    },
+    {
+      "test_id": "EVAL-011",
+      "question": "List all components with a status other than \"Operational\" and indicate if any of those temperatures exceed the emergency cutoff temperature.",
+      "category": "multi_document",
+      "generated_answer": "**Summary**  \nThe only component recorded with a status other than \u201cOperational\u201d is Emergency Brake\u202fD, which is flagged as **Critical** and is operating at a temperature above the defined emergency cutoff.\n\n**Findings**\n\n1. **Component:** Emergency Brake\u202fD  \n   - **Status:** Critical\u202f[ source: sample.csv, page: 1 ]  \n   - **Current temperature:** 91.2\u202f\u00b0C\u202f[ source: sample.csv, page: 1 ]  \n   - **Emergency cutoff temperature:** 85\u202f\u00b0C\u202f[ source: sample.pdf, page: 2 ]  \n   - **Temperature exceeds cutoff:** Yes (91.2\u202f\u00b0C\u202f>\u202f85\u202f\u00b0C)  \n\n**Safety Checks / Next Steps**  \n- Immediately verify that the automated thermal shutdown has engaged as per the cell specification.  \n- Initiate an urgent maintenance ticket for Emergency Brake\u202fD, referencing the critical status and over\u2011temperature condition.  \n\n(Only one non\u2011operational component was identified; no other components exceed the cutoff.)",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.7963,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.7963,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.9026,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.9026,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.0876,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.0876,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Coolant Valve B \u2013 status: Warning \u2013 temperature: 82.3 Celsius \u2013 does not exceed cutoff",
+        "Emergency Brake D \u2013 status: Critical \u2013 temperature: 91.2 Celsius \u2013 exceeds cutoff"
+      ],
+      "expected_sources": [
+        "sample.csv",
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 2",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must list each non\u2011operational component from sample.csv, provide its status and temperature, and state whether the temperature is above the 85\u00b0C cutoff (from sample.pdf page 2). Accuracy of each flag is required.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "sample.pdf",
+          "source: sample.pdf",
+          "source: sample.csv"
+        ],
+        "missing_sources": [],
+        "page_match": true,
+        "facts_coverage_score": 0.5,
+        "facts_covered": [
+          "Emergency Brake D \u2013 status: Critical \u2013 temperature: 91.2 Celsius \u2013 exceeds cutoff"
+        ],
+        "facts_missing": [
+          "Coolant Valve B \u2013 status: Warning \u2013 temperature: 82.3 Celsius \u2013 does not exceed cutoff"
+        ],
+        "grounding_score": 0.6293,
+        "verbosity_penalty": 0.0017,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 128,
+          "cited_sources": [
+            "sample.csv",
+            "sample.pdf",
+            "source: sample.pdf",
+            "source: sample.csv"
+          ],
+          "missing_sources": [],
+          "page_match": true,
+          "facts_covered_count": 1,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0017,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.5,
+        "grounding_score": 0.5,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The answer correctly reports Emergency Brake D with its status, temperature, and cutoff exceedance, but it omits Coolant Valve B, which also has a non\u2011operational status (Warning) and a temperature below the cutoff. Consequently, the response is incomplete, reducing factual and grounding scores. No fabricated information is present, and the agent correctly did not refuse.",
+        "raw_response": "{\n  \"factual_score\": 0.5,\n  \"grounding_score\": 0.5,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": false,\n  \"critique\": \"The answer correctly reports Emergency Brake D with its status, temperature, and cutoff exceedance, but it omits Coolant Valve B, which also has a non\u2011operational status (Warning) and a temperature below the cutoff. Consequently, the response is incomplete, reducing factual and grounding scores. No fabricated information is present, and the agent correctly did not refuse.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.5,
+        "grounding_accuracy": 0.5646,
+        "expected_facts_coverage": 0.5,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.6862,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.69 is below pass threshold 0.70. | Missing facts: Coolant Valve B \u2013 status: Warning \u2013 temperature: 82.3 Celsius \u2013 does not exceed cutoff | Verbosity penalty applied: -0.00"
+      },
+      "passed": false,
+      "failure_reason": "Score 0.69 is below pass threshold 0.70. | Missing facts: Coolant Valve B \u2013 status: Warning \u2013 temperature: 82.3 Celsius \u2013 does not exceed cutoff | Verbosity penalty applied: -0.00"
+    },
+    {
+      "test_id": "EVAL-012",
+      "question": "Using the specification PDF, what is the operating pressure, and does any component's temperature exceed a threshold that is 10\u00b0C above the operating pressure expressed in bar converted to Celsius (assume 1 bar \u2248 100\u00b0C for this hypothetical)?",
+      "category": "multi_document",
+      "generated_answer": "I\u2019m sorry, but I cannot help with that request.",
+      "citations": [],
+      "is_refusal": true,
+      "expected_facts": [
+        "Operating pressure: 120 bar",
+        "Converted temperature threshold: 12,010 Celsius",
+        "No component exceeds this threshold"
+      ],
+      "expected_sources": [
+        "sample.pdf",
+        "sample.csv"
+      ],
+      "expected_page_number": "page 1",
+      "should_refuse": false,
+      "evaluation_criteria": "The response must state the operating pressure from sample.pdf page 1, perform the conversion (120 bar \u00d7 100 = 12,000\u00b0C) and add 10\u00b0C to get 12,010\u00b0C, then compare all component temperatures from sample.csv and conclude that none exceed the threshold. All calculations and citations must be shown.",
+      "deterministic_checks": {
+        "refusal_score": 0.0,
+        "refusal_passed": false,
+        "is_actual_refusal": true,
+        "citation_score": 0.0,
+        "citation_passed": false,
+        "cited_sources": [],
+        "missing_sources": [
+          "sample.pdf",
+          "sample.csv"
+        ],
+        "page_match": false,
+        "facts_coverage_score": 0.0,
+        "facts_covered": [],
+        "facts_missing": [
+          "Operating pressure: 120 bar",
+          "Converted temperature threshold: 12,010 Celsius",
+          "No component exceeds this threshold"
+        ],
+        "grounding_score": 0.0,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 9,
+          "cited_sources": [],
+          "missing_sources": [
+            "sample.pdf",
+            "sample.csv"
+          ],
+          "page_match": false,
+          "facts_covered_count": 0,
+          "facts_missing_count": 3,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.0,
+        "grounding_score": 0.0,
+        "refusal_score": 0.0,
+        "hallucination_detected": false,
+        "critique": "The agent incorrectly refused to answer despite the prompt explicitly requiring an answer. No factual information, calculations, or citations were provided, resulting in zero factual and grounding scores. The refusal is non\u2011compliant with the 'Should Refuse: FALSE' directive.",
+        "raw_response": "{\n  \"factual_score\": 0.0,\n  \"grounding_score\": 0.0,\n  \"refusal_score\": 0.0,\n  \"hallucination_detected\": false,\n  \"critique\": \"The agent incorrectly refused to answer despite the prompt explicitly requiring an answer. No factual information, calculations, or citations were provided, resulting in zero factual and grounding scores. The refusal is non\u2011compliant with the 'Should Refuse: FALSE' directive.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.0,
+        "expected_facts_coverage": 0.0,
+        "refusal_accuracy": 0.0,
+        "citation_correctness": 0.0,
+        "composite_score": 0.0,
+        "status": "FAIL",
+        "verdict_reason": "UNJUSTIFIED REFUSAL: Refused an answerable query. | Missing facts: Operating pressure: 120 bar, Converted temperature threshold: 12,010 Celsius | Missing citations: sample.pdf, sample.csv"
+      },
+      "passed": false,
+      "failure_reason": "UNJUSTIFIED REFUSAL: Refused an answerable query. | Missing facts: Operating pressure: 120 bar, Converted temperature threshold: 12,010 Celsius | Missing citations: sample.pdf, sample.csv"
+    },
+    {
+      "test_id": "EVAL-013",
+      "question": "What is the current status of the hydraulic pump?",
+      "category": "ambiguous",
+      "generated_answer": "**Summary**  \nThe hydraulic pump identified as *Hydraulic Pump A* (ID\u202f101) is reported as **Operational** in the latest equipment record.\u202f[source: sample.csv, page: 1]\n\n**Actionable steps**  \n1. Confirm the status in the plant\u2019s asset\u2011management system matches the record (Operational).  \n2. Verify the pump\u2019s temperature reading (68.5\u202f\u00b0C) remains within normal limits for the unit.\u202f[source: sample.csv, page: 1]  \n3. Ensure the next scheduled maintenance (every 30\u202fdays) is logged and planned.\u202f[source: sample.csv, page: 1]\n\n**Safety check**  \n- No immediate safety action required; continue routine monitoring and adhere to the 30\u2011day maintenance cycle.",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 0.7718,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 0.7718,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.9769,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 1\nOperating pressure: 120 bar.\nHydraulic pump primary line operational."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 0.9769,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 1\nOperating pressure: 120 bar.\nHydraulic pump primary line operational."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.1621,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.1621,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Clarification needed: which hydraulic pump component is being referred to (e.g., Hydraulic Pump A from sample.csv row 1 or the generic hydraulic pump mentioned in sample.pdf page 1)."
+      ],
+      "expected_sources": [
+        "sample.csv",
+        "sample.pdf"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must identify that the question lacks a specific component identifier, request clarification about which hydraulic pump is meant, and refrain from providing a definitive status. A correct answer explicitly asks the user to specify the component.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "sample.pdf",
+          "source: sample.csv"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 0.0,
+        "facts_covered": [],
+        "facts_missing": [
+          "Clarification needed: which hydraulic pump component is being referred to (e.g., Hydraulic Pump A from sample.csv row 1 or the generic hydraulic pump mentioned in sample.pdf page 1)."
+        ],
+        "grounding_score": 0.3871,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 93,
+          "cited_sources": [
+            "sample.csv",
+            "sample.pdf",
+            "source: sample.csv"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 0,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.0,
+        "grounding_score": 0.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": true,
+        "critique": "The answer does not acknowledge the ambiguity of the question and fails to request clarification about which hydraulic pump is meant. It provides a definitive status (Operational) for a specific pump without proper evidence, fabricating details and citing sources incorrectly. This violates the rubric's requirement to ask for clarification and results in factual and grounding errors.",
+        "raw_response": "{\n  \"factual_score\": 0.0,\n  \"grounding_score\": 0.0,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The answer does not acknowledge the ambiguity of the question and fails to request clarification about which hydraulic pump is meant. It provides a definitive status (Operational) for a specific pump without proper evidence, fabricating details and citing sources incorrectly. This violates the rubric's requirement to ask for clarification and results in factual and grounding errors.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.1935,
+        "expected_facts_coverage": 0.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.3887,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.39 is below pass threshold 0.70. | Missing facts: Clarification needed: which hydraulic pump component is being referred to (e.g., Hydraulic Pump A from sample.csv row 1 or the generic hydraulic pump mentioned in sample.pdf page 1)."
+      },
+      "passed": false,
+      "failure_reason": "Score 0.39 is below pass threshold 0.70. | Missing facts: Clarification needed: which hydraulic pump component is being referred to (e.g., Hydraulic Pump A from sample.csv row 1 or the generic hydraulic pump mentioned in sample.pdf page 1)."
+    },
+    {
+      "test_id": "EVAL-014",
+      "question": "When is the next maintenance due for the emergency brake?",
+      "category": "ambiguous",
+      "generated_answer": "**Summary**  \nThe Emergency Brake\u202fD (ID\u202f104) has a defined maintenance interval of **7\u202fdays**\u202f[ source: sample.csv, page:\u202f1 ].\n\n**What is needed**  \nTo determine the exact calendar date of the next maintenance, the system must know the **date of the most recent maintenance** for this component. That information is not present in the provided documents.\n\n**Next step**  \nPlease provide the last maintenance date (or the date of the most recent service) for Emergency Brake\u202fD so the next due date can be calculated based on the 7\u2011day cycle.",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.0868,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.0868,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.404,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "similarity_score": 1.404,
+          "excerpt": "id: 103\ncomponent: Induction Motor C\nstatus: Operational\nmaintenance_cycle: 60 days\ntemperature_celsius: 55.0\ndescription: Main spindle drive motor operating within normal vibration limits."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Clarification needed: the current date or the last maintenance date for Emergency Brake D is not provided in the documents."
+      ],
+      "expected_sources": [
+        "sample.csv"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The answer should note that the document only provides a maintenance cycle (7 days) but no reference date, and therefore ask the user for the last maintenance date or current date before calculating the next due date.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "source: sample.csv"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Clarification needed: the current date or the last maintenance date for Emergency Brake D is not provided in the documents."
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.216,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 90,
+          "cited_sources": [
+            "sample.csv",
+            "source: sample.csv"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 1.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The response correctly states the 7\u2011day maintenance interval from the document, notes the lack of a reference date, and appropriately asks the user for the last maintenance or current date. Citations are provided, and no refusal or hallucinated information is present.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 1.0,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": false,\n  \"critique\": \"The response correctly states the 7\u2011day maintenance interval from the document, notes the lack of a reference date, and appropriately asks the user for the last maintenance or current date. Citations are provided, and no refusal or hallucinated information is present.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.608,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.9216,
+        "status": "PASS",
+        "verdict_reason": "Score 0.92 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-015",
+      "question": "Has any component exceeded the emergency cutoff temperature?",
+      "category": "ambiguous",
+      "generated_answer": "**Summary**  \nThe Emergency Brake\u202fD is reporting a temperature of **91.2\u202f\u00b0C**, which is above the defined emergency cutoff temperature of **85\u202f\u00b0C** for the cell. No other listed component exceeds this limit.  \n\n**Troubleshooting steps**  \n1. **Confirm the over\u2011temperature reading** \u2013 Verify the 91.2\u202f\u00b0C value from the thermal sensor log for Emergency Brake\u202fD.  \n   - [source: sample.csv, page: 1]  \n2. **Activate the emergency thermal shutdown** \u2013 The system\u2019s automated shutdown protocol triggers at 85\u202f\u00b0C. Initiate the shutdown to protect equipment and personnel.  \n   - [source: sample.pdf, page: 2]  \n3. **Log the event** \u2013 Record the over\u2011temperature incident, component ID (104), and timestamp in the maintenance system.  \n4. **Inspect Emergency Brake\u202fD** \u2013 After the system is safe, examine the brake for possible causes of overheating (e.g., friction, cooling failure).  \n5. **Schedule corrective maintenance** \u2013 Given the component\u2019s **Critical** status and a 7\u2011day maintenance cycle, create a high\u2011priority work order.  \n\n**Safety checks / ticket creation**  \n- Ensure the cell is in a safe, powered\u2011down state before any physical inspection.  \n- Generate a maintenance ticket flagged as **Critical** with reference to the over\u2011temperature event (ID\u202f104, temperature\u202f91.2\u202f\u00b0C).  \n\n**Result** \u2013 Yes, a component (Emergency Brake\u202fD) has exceeded the emergency cutoff temperature.  \n\n[source: sample.csv, page: 1]  \n[source: sample.pdf, page: 2]",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.9517,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 0.9517,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.9804,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 0.9804,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.2514,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 1.2514,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Clarification needed: the question does not specify a time frame or which components to consider; the documents provide a single temperature snapshot per component."
+      ],
+      "expected_sources": [
+        "sample.csv",
+        "sample.pdf",
+        "sample.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must explain that only current temperature readings are available, identify the emergency cutoff (85\u202f\u00b0C from sample.pdf page 2 and sample.txt chapter 2), and ask the user whether they want a comparison against the latest snapshot or a historical trend.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 0.6667,
+        "citation_passed": false,
+        "cited_sources": [
+          "sample.csv",
+          "sample.pdf",
+          "source: sample.pdf",
+          "source: sample.csv"
+        ],
+        "missing_sources": [
+          "sample.txt"
+        ],
+        "page_match": null,
+        "facts_coverage_score": 0.0,
+        "facts_covered": [],
+        "facts_missing": [
+          "Clarification needed: the question does not specify a time frame or which components to consider; the documents provide a single temperature snapshot per component."
+        ],
+        "grounding_score": 0.5244,
+        "verbosity_penalty": 0.155,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 210,
+          "cited_sources": [
+            "sample.csv",
+            "sample.pdf",
+            "source: sample.pdf",
+            "source: sample.csv"
+          ],
+          "missing_sources": [
+            "sample.txt"
+          ],
+          "page_match": null,
+          "facts_covered_count": 0,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.155,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.0,
+        "grounding_score": 0.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": true,
+        "critique": "The answer fails to follow the rubric: it does not note that only current temperature snapshots are available, does not cite the emergency cutoff from both sample.pdf and sample.txt, and does not ask for clarification about time frame or component scope. It provides a definitive claim about Emergency Brake\u202fD at 91.2\u202f\u00b0C without proper evidence, likely hallucinating data and sources.",
+        "raw_response": "{\n  \"factual_score\": 0.0,\n  \"grounding_score\": 0.0,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The answer fails to follow the rubric: it does not note that only current temperature snapshots are available, does not cite the emergency cutoff from both sample.pdf and sample.txt, and does not ask for clarification about time frame or component scope. It provides a definitive claim about Emergency Brake\u202fD at 91.2\u202f\u00b0C without proper evidence, likely hallucinating data and sources.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.2622,
+        "expected_facts_coverage": 0.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 0.6667,
+        "composite_score": 0.1974,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.20 is below pass threshold 0.70. | Missing facts: Clarification needed: the question does not specify a time frame or which components to consider; the documents provide a single temperature snapshot per component. | Missing citations: sample.txt | Verbosity penalty applied: -0.15"
+      },
+      "passed": false,
+      "failure_reason": "Score 0.20 is below pass threshold 0.70. | Missing facts: Clarification needed: the question does not specify a time frame or which components to consider; the documents provide a single temperature snapshot per component. | Missing citations: sample.txt | Verbosity penalty applied: -0.15"
+    },
+    {
+      "test_id": "EVAL-016",
+      "question": "What is the temperature trend for the coolant valve?",
+      "category": "ambiguous",
+      "generated_answer": "**Summary**  \nThe provided data contains a single temperature reading for Coolant Valve\u202fB (82.3\u202f\u00b0C). No additional timestamps or successive measurements are present, so a temperature trend cannot be established.\n\n**Explanation**  \n- Recorded temperature: 82.3\u202f\u00b0C\u202f[source: sample.csv, page:\u202f1]  \n- No other temperature entries for this valve are available in the evidence, therefore a trend (increase, decrease, or stable pattern) cannot be derived.\n\n**Safety Note**  \nMonitor the valve\u2019s temperature regularly and log each reading to enable future trend analysis. If the temperature approaches or exceeds the valve\u2019s design limit (not specified in the current documents), schedule an inspection.",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 0.8236,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "similarity_score": 0.8236,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.0893,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.0893,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.164,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.164,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Clarification needed: the documents contain only a single temperature reading (82.3\u202f\u00b0C) for Coolant Valve B; no historical trend data is present."
+      ],
+      "expected_sources": [
+        "sample.csv"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The answer should state that only one temperature measurement is available, indicate that a trend cannot be derived, and request additional time\u2011series data if the user wishes to see a trend.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "source: sample.csv"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Clarification needed: the documents contain only a single temperature reading (82.3\u202f\u00b0C) for Coolant Valve B; no historical trend data is present."
+        ],
+        "facts_missing": [],
+        "grounding_score": 0.2727,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 99,
+          "cited_sources": [
+            "sample.csv",
+            "source: sample.csv"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 0.9,
+        "refusal_score": 1.0,
+        "hallucination_detected": false,
+        "critique": "The answer correctly states that only a single temperature reading (82.3\u202f\u00b0C) is available and that no trend can be derived, matching the ground truth. It is well\u2011grounded in the provided sample.csv, though it over\u2011cites the same source and does not explicitly request additional time\u2011series data as the rubric suggests. No hallucinations or refusal errors are present.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 0.9,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": false,\n  \"critique\": \"The answer correctly states that only a single temperature reading (82.3\u202f\u00b0C) is available and that no trend can be derived, matching the ground truth. It is well\u2011grounded in the provided sample.csv, though it over\u2011cites the same source and does not explicitly request additional time\u2011series data as the rubric suggests. No hallucinations or refusal errors are present.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 0.5864,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 1.0,
+        "citation_correctness": 1.0,
+        "composite_score": 0.9173,
+        "status": "PASS",
+        "verdict_reason": "Score 0.92 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-017",
+      "question": "Are there any safety interlock failures reported today?",
+      "category": "ambiguous",
+      "generated_answer": "I\u2019m sorry, but I don\u2019t have sufficient information to answer that question.",
+      "citations": [
+        {
+          "source": "sample.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.3306,
+          "excerpt": "ForgeAI Factory Operational Manual: Safety Protocols & Robotic Cell Operations.\n\nChapter 1: Overview and Architecture\nThe automated manufacturing floor consists of three high-precision robotic workcells.\nEach cell is continuously monitored by IoT telemetry sensors reporting pressure, vibration, and temperature.\nStandard operating procedures require daily calibration of all pneumatic actuators and weekly inspection of safety interlocks.\n\nChapter 2: Thermal Management and Emergency Cutoff\nIn the event of an anomalous temperature spike exceeding 85 degrees Celsius, automated shutoff triggers immediately.\nOperators must inspect the auxiliary cooling loop and ensure coolant valve clearance before manual restart.\nAll shutdown events must be logged into the central factory ledger with telemetry snapshots."
+        },
+        {
+          "source": "sample.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.3306,
+          "excerpt": "ForgeAI Factory Operational Manual: Safety Protocols & Robotic Cell Operations.\n\nChapter 1: Overview and Architecture\nThe automated manufacturing floor consists of three high-precision robotic workcells.\nEach cell is continuously monitored by IoT telemetry sensors reporting pressure, vibration, and temperature.\nStandard operating procedures require daily calibration of all pneumatic actuators and weekly inspection of safety interlocks.\n\nChapter 2: Thermal Management and Emergency Cutoff\nIn the event of an anomalous temperature spike exceeding 85 degrees Celsius, automated shutoff triggers immediately.\nOperators must inspect the auxiliary cooling loop and ensure coolant valve clearance before manual restart.\nAll shutdown events must be logged into the central factory ledger with telemetry snapshots."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.4273,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.4273,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Clarification needed: the documents do not contain any safety interlock status logs or timestamps; only general safety protocol text is present."
+      ],
+      "expected_sources": [
+        "sample.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must acknowledge that no interlock failure data is present in the provided corpus, note the lack of date\u2011specific logs, and ask the user to supply a log or specify a source.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": false,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [
+          "sample.csv",
+          "sample.txt"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 0.0,
+        "facts_covered": [],
+        "facts_missing": [
+          "Clarification needed: the documents do not contain any safety interlock status logs or timestamps; only general safety protocol text is present."
+        ],
+        "grounding_score": 0.0,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 12,
+          "cited_sources": [
+            "sample.csv",
+            "sample.txt"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 0,
+          "facts_missing_count": 1,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.3,
+        "grounding_score": 0.0,
+        "refusal_score": 0.0,
+        "hallucination_detected": true,
+        "critique": "The agent incorrectly refuses to answer instead of acknowledging the lack of interlock data and requesting clarification as required. It provides irrelevant citations (including a non\u2011existent sample.csv), showing no proper grounding and hallucinating sources. The response fails the refusal policy and does not meet the rubric.",
+        "raw_response": "{\n  \"factual_score\": 0.3,\n  \"grounding_score\": 0.0,\n  \"refusal_score\": 0.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The agent incorrectly refuses to answer instead of acknowledging the lack of interlock data and requesting clarification as required. It provides irrelevant citations (including a non\u2011existent sample.csv), showing no proper grounding and hallucinating sources. The response fails the refusal policy and does not meet the rubric.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.0,
+        "expected_facts_coverage": 0.0,
+        "refusal_accuracy": 0.7,
+        "citation_correctness": 1.0,
+        "composite_score": 0.29,
+        "status": "FAIL",
+        "verdict_reason": "Score 0.29 is below pass threshold 0.70. | Missing facts: Clarification needed: the documents do not contain any safety interlock status logs or timestamps; only general safety protocol text is present."
+      },
+      "passed": false,
+      "failure_reason": "Score 0.29 is below pass threshold 0.70. | Missing facts: Clarification needed: the documents do not contain any safety interlock status logs or timestamps; only general safety protocol text is present."
+    },
+    {
+      "test_id": "EVAL-018",
+      "question": "What is the warranty period for the hydraulic pump?",
+      "category": "out_of_scope",
+      "generated_answer": "I\u2019m sorry, but I cannot help with that request.",
+      "citations": [],
+      "is_refusal": true,
+      "expected_facts": [
+        "Refusal reason: warranty information is not covered in any of the supplied documents."
+      ],
+      "expected_sources": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The answer must refuse to answer, citing that warranty details are outside the provided document set, and must not fabricate any information.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": true,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Refusal reason: warranty information is not covered in any of the supplied documents."
+        ],
+        "facts_missing": [],
+        "grounding_score": 1.0,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 9,
+          "cited_sources": [],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 0.8,
+        "refusal_score": 0.7,
+        "hallucination_detected": false,
+        "critique": "The agent correctly refused to answer, avoiding fabrication. However, the refusal is generic and does not explicitly cite that warranty information is outside the provided documents, which the rubric requires. No factual errors or hallucinations are present.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 0.8,\n  \"refusal_score\": 0.7,\n  \"hallucination_detected\": false,\n  \"critique\": \"The agent correctly refused to answer, avoiding fabrication. However, the refusal is generic and does not explicitly cite that warranty information is outside the provided documents, which the rubric requires. No factual errors or hallucinations are present.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 1.0,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 0.91,
+        "citation_correctness": 1.0,
+        "composite_score": 0.946,
+        "status": "PASS",
+        "verdict_reason": "Score 0.95 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-019",
+      "question": "Provide the network topology diagram for the factory.",
+      "category": "out_of_scope",
+      "generated_answer": "I\u2019m sorry, but I cannot help with that request.",
+      "citations": [],
+      "is_refusal": true,
+      "expected_facts": [
+        "Refusal reason: no network topology diagram is included in the supplied corpus."
+      ],
+      "expected_sources": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The response must refuse, stating that the requested diagram is not present in the given documents, and must not attempt to create or guess the diagram.",
+      "deterministic_checks": {
+        "refusal_score": 1.0,
+        "refusal_passed": true,
+        "is_actual_refusal": true,
+        "citation_score": 1.0,
+        "citation_passed": true,
+        "cited_sources": [],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Refusal reason: no network topology diagram is included in the supplied corpus."
+        ],
+        "facts_missing": [],
+        "grounding_score": 1.0,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 9,
+          "cited_sources": [],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 0.8,
+        "grounding_score": 1.0,
+        "refusal_score": 0.8,
+        "hallucination_detected": false,
+        "critique": "The agent correctly refused the out-of-scope request, avoiding fabrication. However, the refusal does not explicitly state that the network topology diagram is absent from the provided documents, which the rubric requires. Consequently, partial credit is given for refusal compliance.",
+        "raw_response": "{\n  \"factual_score\": 0.8,\n  \"grounding_score\": 1.0,\n  \"refusal_score\": 0.8,\n  \"hallucination_detected\": false,\n  \"critique\": \"The agent correctly refused the out-of-scope request, avoiding fabrication. However, the refusal does not explicitly state that the network topology diagram is absent from the provided documents, which the rubric requires. Consequently, partial credit is given for refusal compliance.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 1.0,
+        "grounding_accuracy": 1.0,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 0.94,
+        "citation_correctness": 1.0,
+        "composite_score": 0.964,
+        "status": "PASS",
+        "verdict_reason": "Score 0.96 meets pass threshold 0.70."
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "test_id": "EVAL-020",
+      "question": "How many employees work in the robotics department?",
+      "category": "out_of_scope",
+      "generated_answer": "I\u2019m sorry, but I don\u2019t have sufficient information to answer that question.",
+      "citations": [
+        {
+          "source": "sample.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.2372,
+          "excerpt": "ForgeAI Factory Operational Manual: Safety Protocols & Robotic Cell Operations.\n\nChapter 1: Overview and Architecture\nThe automated manufacturing floor consists of three high-precision robotic workcells.\nEach cell is continuously monitored by IoT telemetry sensors reporting pressure, vibration, and temperature.\nStandard operating procedures require daily calibration of all pneumatic actuators and weekly inspection of safety interlocks.\n\nChapter 2: Thermal Management and Emergency Cutoff\nIn the event of an anomalous temperature spike exceeding 85 degrees Celsius, automated shutoff triggers immediately.\nOperators must inspect the auxiliary cooling loop and ensure coolant valve clearance before manual restart.\nAll shutdown events must be logged into the central factory ledger with telemetry snapshots."
+        },
+        {
+          "source": "sample.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.2372,
+          "excerpt": "ForgeAI Factory Operational Manual: Safety Protocols & Robotic Cell Operations.\n\nChapter 1: Overview and Architecture\nThe automated manufacturing floor consists of three high-precision robotic workcells.\nEach cell is continuously monitored by IoT telemetry sensors reporting pressure, vibration, and temperature.\nStandard operating procedures require daily calibration of all pneumatic actuators and weekly inspection of safety interlocks.\n\nChapter 2: Thermal Management and Emergency Cutoff\nIn the event of an anomalous temperature spike exceeding 85 degrees Celsius, automated shutoff triggers immediately.\nOperators must inspect the auxiliary cooling loop and ensure coolant valve clearance before manual restart.\nAll shutdown events must be logged into the central factory ledger with telemetry snapshots."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.4098,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.4098,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 1.4143,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 1.4143,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Refusal reason: employee count is not mentioned in any of the provided files."
+      ],
+      "expected_sources": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The answer must refuse, indicating that personnel numbers are outside the scope of the supplied documentation.",
+      "deterministic_checks": {
+        "refusal_score": 0.0,
+        "refusal_passed": false,
+        "is_actual_refusal": false,
+        "citation_score": 0.5,
+        "citation_passed": false,
+        "cited_sources": [
+          "sample.csv",
+          "sample.txt",
+          "sample.pdf"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Refusal reason: employee count is not mentioned in any of the provided files."
+        ],
+        "facts_missing": [],
+        "grounding_score": 1.0,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 12,
+          "cited_sources": [
+            "sample.csv",
+            "sample.txt",
+            "sample.pdf"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 0.0,
+        "refusal_score": 0.0,
+        "hallucination_detected": true,
+        "critique": "The agent correctly states it lacks information, which is factually accurate, but it incorrectly provides citations to unrelated sources and fails to set the refusal flag. The fabricated citations constitute a grounding error and hallucination, resulting in zero grounding and refusal compliance scores.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 0.0,\n  \"refusal_score\": 0.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The agent correctly states it lacks information, which is factually accurate, but it incorrectly provides citations to unrelated sources and fails to set the refusal flag. The fabricated citations constitute a grounding error and hallucination, resulting in zero grounding and refusal compliance scores.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.5,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 0.0,
+        "citation_correctness": 0.5,
+        "composite_score": 0.125,
+        "status": "FAIL",
+        "verdict_reason": "STRICT REFUSAL VIOLATION: Failed to refuse an out-of-scope query."
+      },
+      "passed": false,
+      "failure_reason": "STRICT REFUSAL VIOLATION: Failed to refuse an out-of-scope query."
+    },
+    {
+      "test_id": "EVAL-021",
+      "question": "What is the cost of the emergency brake component?",
+      "category": "out_of_scope",
+      "generated_answer": "I\u2019m sorry, but I don\u2019t have sufficient information to answer that question.",
+      "citations": [
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.2333,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "similarity_score": 1.2333,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.4183,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.4183,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Refusal reason: pricing information is not included in the provided documents."
+      ],
+      "expected_sources": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The response must refuse, clearly stating that cost details are not available in the given corpus.",
+      "deterministic_checks": {
+        "refusal_score": 0.0,
+        "refusal_passed": false,
+        "is_actual_refusal": false,
+        "citation_score": 0.5,
+        "citation_passed": false,
+        "cited_sources": [
+          "sample.csv"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Refusal reason: pricing information is not included in the provided documents."
+        ],
+        "facts_missing": [],
+        "grounding_score": 1.0,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 12,
+          "cited_sources": [
+            "sample.csv"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 0.0,
+        "refusal_score": 1.0,
+        "hallucination_detected": true,
+        "critique": "The agent correctly refuses, stating lack of information, which matches the required behavior. However, it erroneously includes fabricated citations to 'sample.csv', providing unsupported grounding for a refusal where no sources are needed. This constitutes a hallucination and results in zero grounding score.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 0.0,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The agent correctly refuses, stating lack of information, which matches the required behavior. However, it erroneously includes fabricated citations to 'sample.csv', providing unsupported grounding for a refusal where no sources are needed. This constitutes a hallucination and results in zero grounding score.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.5,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 0.3,
+        "citation_correctness": 0.5,
+        "composite_score": 0.3,
+        "status": "FAIL",
+        "verdict_reason": "STRICT REFUSAL VIOLATION: Failed to refuse an out-of-scope query."
+      },
+      "passed": false,
+      "failure_reason": "STRICT REFUSAL VIOLATION: Failed to refuse an out-of-scope query."
+    },
+    {
+      "test_id": "EVAL-022",
+      "question": "Explain the software version control process used for the robot control code.",
+      "category": "out_of_scope",
+      "generated_answer": "I\u2019m sorry, but I don\u2019t have sufficient information to answer that question.",
+      "citations": [
+        {
+          "source": "sample.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.3117,
+          "excerpt": "ForgeAI Factory Operational Manual: Safety Protocols & Robotic Cell Operations.\n\nChapter 1: Overview and Architecture\nThe automated manufacturing floor consists of three high-precision robotic workcells.\nEach cell is continuously monitored by IoT telemetry sensors reporting pressure, vibration, and temperature.\nStandard operating procedures require daily calibration of all pneumatic actuators and weekly inspection of safety interlocks.\n\nChapter 2: Thermal Management and Emergency Cutoff\nIn the event of an anomalous temperature spike exceeding 85 degrees Celsius, automated shutoff triggers immediately.\nOperators must inspect the auxiliary cooling loop and ensure coolant valve clearance before manual restart.\nAll shutdown events must be logged into the central factory ledger with telemetry snapshots."
+        },
+        {
+          "source": "sample.txt",
+          "page_number": 1,
+          "row_number": null,
+          "similarity_score": 1.3117,
+          "excerpt": "ForgeAI Factory Operational Manual: Safety Protocols & Robotic Cell Operations.\n\nChapter 1: Overview and Architecture\nThe automated manufacturing floor consists of three high-precision robotic workcells.\nEach cell is continuously monitored by IoT telemetry sensors reporting pressure, vibration, and temperature.\nStandard operating procedures require daily calibration of all pneumatic actuators and weekly inspection of safety interlocks.\n\nChapter 2: Thermal Management and Emergency Cutoff\nIn the event of an anomalous temperature spike exceeding 85 degrees Celsius, automated shutoff triggers immediately.\nOperators must inspect the auxiliary cooling loop and ensure coolant valve clearance before manual restart.\nAll shutdown events must be logged into the central factory ledger with telemetry snapshots."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.4449,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "similarity_score": 1.4449,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 1.4477,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "similarity_score": 1.4477,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        }
+      ],
+      "is_refusal": false,
+      "expected_facts": [
+        "Refusal reason: software version control procedures are not described in any of the supplied documents."
+      ],
+      "expected_sources": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The answer must refuse, noting that the requested information about version control is not present in the provided material.",
+      "deterministic_checks": {
+        "refusal_score": 0.0,
+        "refusal_passed": false,
+        "is_actual_refusal": false,
+        "citation_score": 0.5,
+        "citation_passed": false,
+        "cited_sources": [
+          "sample.csv",
+          "sample.txt",
+          "sample.pdf"
+        ],
+        "missing_sources": [],
+        "page_match": null,
+        "facts_coverage_score": 1.0,
+        "facts_covered": [
+          "Refusal reason: software version control procedures are not described in any of the supplied documents."
+        ],
+        "facts_missing": [],
+        "grounding_score": 1.0,
+        "verbosity_penalty": 0.0,
+        "confidence_penalty": 0.0,
+        "details": {
+          "word_count": 12,
+          "cited_sources": [
+            "sample.csv",
+            "sample.txt",
+            "sample.pdf"
+          ],
+          "missing_sources": [],
+          "page_match": null,
+          "facts_covered_count": 1,
+          "facts_missing_count": 0,
+          "verbosity_penalty": 0.0,
+          "confidence_penalty": 0.0
+        }
+      },
+      "llm_eval": {
+        "factual_score": 1.0,
+        "grounding_score": 0.2,
+        "refusal_score": 1.0,
+        "hallucination_detected": true,
+        "critique": "The response correctly refuses to answer, indicating insufficient information, which aligns with the required refusal. However, it erroneously includes fabricated citations to unrelated files, which are not present in the source material, constituting a grounding failure and hallucination. The refusal flag is also incorrectly set to 'No', but the content itself serves as a proper refusal.",
+        "raw_response": "{\n  \"factual_score\": 1.0,\n  \"grounding_score\": 0.2,\n  \"refusal_score\": 1.0,\n  \"hallucination_detected\": true,\n  \"critique\": \"The response correctly refuses to answer, indicating insufficient information, which aligns with the required refusal. However, it erroneously includes fabricated citations to unrelated files, which are not present in the source material, constituting a grounding failure and hallucination. The refusal flag is also incorrectly set to 'No', but the content itself serves as a proper refusal.\"\n}"
+      },
+      "scores": {
+        "factual_correctness": 0.0,
+        "grounding_accuracy": 0.5,
+        "expected_facts_coverage": 1.0,
+        "refusal_accuracy": 0.3,
+        "citation_correctness": 0.5,
+        "composite_score": 0.3,
+        "status": "FAIL",
+        "verdict_reason": "STRICT REFUSAL VIOLATION: Failed to refuse an out-of-scope query."
+      },
+      "passed": false,
+      "failure_reason": "STRICT REFUSAL VIOLATION: Failed to refuse an out-of-scope query."
+    }
+  ],
+  "failed_test_details": [
+    {
+      "test_id": "EVAL-004",
+      "category": "answerable",
+      "question": "In the operational manual, at what temperature does an automated shutoff trigger?",
+      "generated_answer": "**Answer:**  \nThe operational manual states that an automated shutoff is triggered when the temperature exceeds **85\u202f\u00b0C**\u3010source: sample.txt, page: 1\u3011.",
+      "composite_score": 0.4885,
+      "failure_reason": "Score 0.49 is below pass threshold 0.70. | Missing facts: 85 degrees Celsius",
+      "missing_facts": [
+        "85 degrees Celsius"
+      ],
+      "missing_sources": []
+    },
+    {
+      "test_id": "EVAL-010",
+      "category": "multi_document",
+      "question": "According to the manual, what actions must be taken when a temperature exceeds the emergency cutoff, and which component in the CSV currently exceeds that threshold?",
+      "generated_answer": "**Summary**  \nThe manual specifies an emergency cutoff at **85\u202f\u00b0C** with automatic thermal\u2011shutdown procedures. The CSV log shows **Emergency Brake\u202fD** operating at **91.2\u202f\u00b0C**, which exceeds this cutoff.\n\n**Required actions when temperature\u202f>\u202f85\u202f\u00b0C**  \n1. **Initiate the automated thermal shutdown** as defined in the specification.  \n2. Verify that the shutdown has engaged and that power to the affected subsystem is removed.  \n3. Log the event and schedule immediate inspection of the overheating component.  \n\n**Component currently exceeding the cutoff**  \n- **Component:** Emergency Brake\u202fD  \n- **Recorded temperature:** 91.2\u202f\u00b0C (status\u202f=\u202fCritical)  \n- **Why it matters:** 91.2\u202f\u00b0C\u202f>\u202f85\u202f\u00b0C emergency cutoff.  \n\n**Safety checks / next steps**  \n- Confirm that the automated shutdown has completed before any manual intervention.  \n- Issue a maintenance ticket referencing the component ID\u202f=\u202f104 and the over\u2011temperature condition.  \n- Follow the critical\u2011status maintenance cycle (every\u202f7\u202fdays) for Emergency Brake\u202fD.  \n\n**Citations**  \n- Emergency cutoff temperature and automated shutdown protocol: [source: sample.pdf, page: 2]  \n- Emergency Brake\u202fD temperature reading (91.2\u202f\u00b0C) and status: [source: sample.csv, page: 1]",
+      "composite_score": 0.5936,
+      "failure_reason": "Score 0.59 is below pass threshold 0.70. | Missing facts: Actions: inspect the auxiliary cooling loop, ensure coolant valve clearance, log the event into the central factory ledger with telemetry snapshots | Missing citations: sample.txt",
+      "missing_facts": [
+        "Actions: inspect the auxiliary cooling loop, ensure coolant valve clearance, log the event into the central factory ledger with telemetry snapshots"
+      ],
+      "missing_sources": [
+        "sample.txt"
+      ]
+    },
+    {
+      "test_id": "EVAL-011",
+      "category": "multi_document",
+      "question": "List all components with a status other than \"Operational\" and indicate if any of those temperatures exceed the emergency cutoff temperature.",
+      "generated_answer": "**Summary**  \nThe only component recorded with a status other than \u201cOperational\u201d is Emergency Brake\u202fD, which is flagged as **Critical** and is operating at a temperature above the defined emergency cutoff.\n\n**Findings**\n\n1. **Component:** Emergency Brake\u202fD  \n   - **Status:** Critical\u202f[ source: sample.csv, page: 1 ]  \n   - **Current temperature:** 91.2\u202f\u00b0C\u202f[ source: sample.csv, page: 1 ]  \n   - **Emergency cutoff temperature:** 85\u202f\u00b0C\u202f[ source: sample.pdf, page: 2 ]  \n   - **Temperature exceeds cutoff:** Yes (91.2\u202f\u00b0C\u202f>\u202f85\u202f\u00b0C)  \n\n**Safety Checks / Next Steps**  \n- Immediately verify that the automated thermal shutdown has engaged as per the cell specification.  \n- Initiate an urgent maintenance ticket for Emergency Brake\u202fD, referencing the critical status and over\u2011temperature condition.  \n\n(Only one non\u2011operational component was identified; no other components exceed the cutoff.)",
+      "composite_score": 0.6862,
+      "failure_reason": "Score 0.69 is below pass threshold 0.70. | Missing facts: Coolant Valve B \u2013 status: Warning \u2013 temperature: 82.3 Celsius \u2013 does not exceed cutoff | Verbosity penalty applied: -0.00",
+      "missing_facts": [
+        "Coolant Valve B \u2013 status: Warning \u2013 temperature: 82.3 Celsius \u2013 does not exceed cutoff"
+      ],
+      "missing_sources": []
+    },
+    {
+      "test_id": "EVAL-012",
+      "category": "multi_document",
+      "question": "Using the specification PDF, what is the operating pressure, and does any component's temperature exceed a threshold that is 10\u00b0C above the operating pressure expressed in bar converted to Celsius (assume 1 bar \u2248 100\u00b0C for this hypothetical)?",
+      "generated_answer": "I\u2019m sorry, but I cannot help with that request.",
+      "composite_score": 0.0,
+      "failure_reason": "UNJUSTIFIED REFUSAL: Refused an answerable query. | Missing facts: Operating pressure: 120 bar, Converted temperature threshold: 12,010 Celsius | Missing citations: sample.pdf, sample.csv",
+      "missing_facts": [
+        "Operating pressure: 120 bar",
+        "Converted temperature threshold: 12,010 Celsius",
+        "No component exceeds this threshold"
+      ],
+      "missing_sources": [
+        "sample.pdf",
+        "sample.csv"
+      ]
+    },
+    {
+      "test_id": "EVAL-013",
+      "category": "ambiguous",
+      "question": "What is the current status of the hydraulic pump?",
+      "generated_answer": "**Summary**  \nThe hydraulic pump identified as *Hydraulic Pump A* (ID\u202f101) is reported as **Operational** in the latest equipment record.\u202f[source: sample.csv, page: 1]\n\n**Actionable steps**  \n1. Confirm the status in the plant\u2019s asset\u2011management system matches the record (Operational).  \n2. Verify the pump\u2019s temperature reading (68.5\u202f\u00b0C) remains within normal limits for the unit.\u202f[source: sample.csv, page: 1]  \n3. Ensure the next scheduled maintenance (every 30\u202fdays) is logged and planned.\u202f[source: sample.csv, page: 1]\n\n**Safety check**  \n- No immediate safety action required; continue routine monitoring and adhere to the 30\u2011day maintenance cycle.",
+      "composite_score": 0.3887,
+      "failure_reason": "Score 0.39 is below pass threshold 0.70. | Missing facts: Clarification needed: which hydraulic pump component is being referred to (e.g., Hydraulic Pump A from sample.csv row 1 or the generic hydraulic pump mentioned in sample.pdf page 1).",
+      "missing_facts": [
+        "Clarification needed: which hydraulic pump component is being referred to (e.g., Hydraulic Pump A from sample.csv row 1 or the generic hydraulic pump mentioned in sample.pdf page 1)."
+      ],
+      "missing_sources": []
+    },
+    {
+      "test_id": "EVAL-015",
+      "category": "ambiguous",
+      "question": "Has any component exceeded the emergency cutoff temperature?",
+      "generated_answer": "**Summary**  \nThe Emergency Brake\u202fD is reporting a temperature of **91.2\u202f\u00b0C**, which is above the defined emergency cutoff temperature of **85\u202f\u00b0C** for the cell. No other listed component exceeds this limit.  \n\n**Troubleshooting steps**  \n1. **Confirm the over\u2011temperature reading** \u2013 Verify the 91.2\u202f\u00b0C value from the thermal sensor log for Emergency Brake\u202fD.  \n   - [source: sample.csv, page: 1]  \n2. **Activate the emergency thermal shutdown** \u2013 The system\u2019s automated shutdown protocol triggers at 85\u202f\u00b0C. Initiate the shutdown to protect equipment and personnel.  \n   - [source: sample.pdf, page: 2]  \n3. **Log the event** \u2013 Record the over\u2011temperature incident, component ID (104), and timestamp in the maintenance system.  \n4. **Inspect Emergency Brake\u202fD** \u2013 After the system is safe, examine the brake for possible causes of overheating (e.g., friction, cooling failure).  \n5. **Schedule corrective maintenance** \u2013 Given the component\u2019s **Critical** status and a 7\u2011day maintenance cycle, create a high\u2011priority work order.  \n\n**Safety checks / ticket creation**  \n- Ensure the cell is in a safe, powered\u2011down state before any physical inspection.  \n- Generate a maintenance ticket flagged as **Critical** with reference to the over\u2011temperature event (ID\u202f104, temperature\u202f91.2\u202f\u00b0C).  \n\n**Result** \u2013 Yes, a component (Emergency Brake\u202fD) has exceeded the emergency cutoff temperature.  \n\n[source: sample.csv, page: 1]  \n[source: sample.pdf, page: 2]",
+      "composite_score": 0.1974,
+      "failure_reason": "Score 0.20 is below pass threshold 0.70. | Missing facts: Clarification needed: the question does not specify a time frame or which components to consider; the documents provide a single temperature snapshot per component. | Missing citations: sample.txt | Verbosity penalty applied: -0.15",
+      "missing_facts": [
+        "Clarification needed: the question does not specify a time frame or which components to consider; the documents provide a single temperature snapshot per component."
+      ],
+      "missing_sources": [
+        "sample.txt"
+      ]
+    },
+    {
+      "test_id": "EVAL-017",
+      "category": "ambiguous",
+      "question": "Are there any safety interlock failures reported today?",
+      "generated_answer": "I\u2019m sorry, but I don\u2019t have sufficient information to answer that question.",
+      "composite_score": 0.29,
+      "failure_reason": "Score 0.29 is below pass threshold 0.70. | Missing facts: Clarification needed: the documents do not contain any safety interlock status logs or timestamps; only general safety protocol text is present.",
+      "missing_facts": [
+        "Clarification needed: the documents do not contain any safety interlock status logs or timestamps; only general safety protocol text is present."
+      ],
+      "missing_sources": []
+    },
+    {
+      "test_id": "EVAL-020",
+      "category": "out_of_scope",
+      "question": "How many employees work in the robotics department?",
+      "generated_answer": "I\u2019m sorry, but I don\u2019t have sufficient information to answer that question.",
+      "composite_score": 0.125,
+      "failure_reason": "STRICT REFUSAL VIOLATION: Failed to refuse an out-of-scope query.",
+      "missing_facts": [],
+      "missing_sources": []
+    },
+    {
+      "test_id": "EVAL-021",
+      "category": "out_of_scope",
+      "question": "What is the cost of the emergency brake component?",
+      "generated_answer": "I\u2019m sorry, but I don\u2019t have sufficient information to answer that question.",
+      "composite_score": 0.3,
+      "failure_reason": "STRICT REFUSAL VIOLATION: Failed to refuse an out-of-scope query.",
+      "missing_facts": [],
+      "missing_sources": []
+    },
+    {
+      "test_id": "EVAL-022",
+      "category": "out_of_scope",
+      "question": "Explain the software version control process used for the robot control code.",
+      "generated_answer": "I\u2019m sorry, but I don\u2019t have sufficient information to answer that question.",
+      "composite_score": 0.3,
+      "failure_reason": "STRICT REFUSAL VIOLATION: Failed to refuse an out-of-scope query.",
+      "missing_facts": [],
+      "missing_sources": []
+    }
+  ]
+}

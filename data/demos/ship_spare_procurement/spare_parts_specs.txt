@@ -1,0 +1,18 @@
+SHIP-SPARE TECHNICAL SPECIFICATION MANUAL
+
+1. SP-101 Main Diesel Fuel Injector:
+- Maximum rated injection pressure: 1,800 bar.
+- Compatible Engine Series: Wartsila 32 & MAN L32/40.
+- Recommended OEM replacement interval: every 6,000 running hours.
+
+2. SP-102 Turbocharger Cartridge Assembly:
+- Maximum continuous exhaust gas temperature: 620 degrees Celsius.
+- Rotor dynamic balance tolerance: 0.5 g-mm.
+
+3. SP-103 Seawater Cooling Pump Impeller:
+- Material: Nickel-Aluminum Bronze & Nitrile composite.
+- Maximum flow capacity: 140 cubic meters per hour at 1,450 RPM.
+
+4. SP-104 Cylinder Head Gasket Kit:
+- Multi-layer stainless steel construction.
+- Final cylinder head bolt torque specification: 240 Nm.

@@ -1,0 +1,30 @@
+Evaluate the following agent response against ground truth requirements.
+
+TEST CASE:
+ID: {test_id}
+Category: {category}
+Question: {question}
+Should Refuse: {should_refuse}
+Expected Facts:
+{expected_facts}
+Expected Sources: {expected_sources} (Page: {expected_page})
+Evaluation Rubric:
+{evaluation_criteria}
+
+AGENT OUTPUT:
+Generated Answer:
+{generated_answer}
+Reported Citations:
+{citations}
+Refusal Flag: {is_refusal}
+
+INSTRUCTIONS:
+Evaluate factual correctness, grounding, and refusal compliance.
+Return a single JSON object with these exact keys:
+{{
+  "factual_score": <float between 0.0 and 1.0>,
+  "grounding_score": <float between 0.0 and 1.0>,
+  "refusal_score": <float between 0.0 and 1.0>,
+  "hallucination_detected": <true or false>,
+  "critique": "<Concise diagnostic critique explaining errors, hallucinations, or valid elements>"
+}}

@@ -1,0 +1,192 @@
+{
+  "total_topics_analyzed": 6,
+  "supported_count": 1,
+  "partially_supported_count": 2,
+  "unsupported_count": 3,
+  "topic_evaluations": [
+    {
+      "topic": "Causes and diagnostics of hydraulic pump pressure drops",
+      "status": "unsupported",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "source_file": "sample.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.325,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 1\nOperating pressure: 120 bar.\nHydraulic pump primary line operational."
+        },
+        {
+          "source_file": "sample.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.325,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 1\nOperating pressure: 120 bar.\nHydraulic pump primary line operational."
+        }
+      ],
+      "reasoning": "The provided excerpts only state the operating pressure (120 bar) and that the hydraulic pump primary line is operational. They do not discuss any reasons for pressure drops nor any methods for diagnosing such issues. Therefore, there is no relevant information to support answering the topic.",
+      "missing_information": "Specific causes of hydraulic pump pressure drops (e.g., wear, blockage, leaks) and diagnostic procedures or indicators are not present in the excerpts."
+    },
+    {
+      "topic": "Interpretation of thermal cutoff triggers and related safety protocols",
+      "status": "partially_supported",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "source_file": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "chunk_index": 1,
+          "similarity_score": 1.0085,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source_file": "sample.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "chunk_index": 1,
+          "similarity_score": 1.0085,
+          "excerpt": "ForgeAI Robotic Cell Specification - Page 2\nEmergency cutoff temperature: 85 Celsius.\nAutomated thermal shutdown protocols active."
+        },
+        {
+          "source_file": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "chunk_index": 3,
+          "similarity_score": 1.0406,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source_file": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "chunk_index": 3,
+          "similarity_score": 1.0406,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        }
+      ],
+      "reasoning": "The excerpts provide concrete facts about an emergency cutoff temperature of 85 °C and mention that automated thermal shutdown protocols are active, as well as an instance of a component exceeding that temperature (91.2 °C). This establishes that thermal cutoff triggers exist and that safety protocols are in place. However, the excerpts lack detailed information on how to interpret the trigger (e.g., what specific actions are taken when the temperature reaches or exceeds the cutoff) and the exact safety procedures to follow, such as shutdown sequence, operator notifications, or post‑event checks. Therefore, while the topic is mentioned, critical procedural details are missing.",
+      "missing_information": "Specific steps of the thermal shutdown protocol, operator response actions, post‑trigger safety checks, and any additional thresholds or escalation procedures."
+    },
+    {
+      "topic": "Indicators and procedures for servicing coolant valves",
+      "status": "partially_supported",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "source_file": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "chunk_index": 1,
+          "similarity_score": 0.9049,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source_file": "sample.csv",
+          "page_number": 1,
+          "row_number": 2,
+          "chunk_index": 1,
+          "similarity_score": 0.9049,
+          "excerpt": "id: 102\ncomponent: Coolant Valve B\nstatus: Warning\nmaintenance_cycle: 14 days\ntemperature_celsius: 82.3\ndescription: Regulates coolant flow to CNC milling station 3. Flow rate reduced by 15 percent."
+        },
+        {
+          "source_file": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "chunk_index": 0,
+          "similarity_score": 1.265,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source_file": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "chunk_index": 0,
+          "similarity_score": 1.265,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        }
+      ],
+      "reasoning": "The excerpts contain data about a coolant valve (component name, status, maintenance cycle, temperature, and a description of reduced flow), which serve as indicators that the valve may need attention. However, they do not include any procedural guidance for servicing the valve. Therefore, the information is only partially sufficient to address the topic.",
+      "missing_information": "Specific servicing procedures for coolant valves (e.g., steps to inspect, clean, replace parts, safety precautions) are not provided. While the excerpts give some indicators such as status = 'Warning', maintenance_cycle = 14 days, and temperature reading, they do not detail how to act on these indicators."
+    },
+    {
+      "topic": "Analysis of component status, temperature readings, and maintenance cycles from provided documents",
+      "status": "supported",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "source_file": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "chunk_index": 3,
+          "similarity_score": 0.9983,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source_file": "sample.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "chunk_index": 3,
+          "similarity_score": 0.9983,
+          "excerpt": "id: 104\ncomponent: Emergency Brake D\nstatus: Critical\nmaintenance_cycle: 7 days\ntemperature_celsius: 91.2\ndescription: Thermal sensor indicates overheating during high-speed deceleration tests."
+        },
+        {
+          "source_file": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "chunk_index": 0,
+          "similarity_score": 1.2075,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        },
+        {
+          "source_file": "sample.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "chunk_index": 0,
+          "similarity_score": 1.2075,
+          "excerpt": "id: 101\ncomponent: Hydraulic Pump A\nstatus: Operational\nmaintenance_cycle: 30 days\ntemperature_celsius: 68.5\ndescription: Primary hydraulic pressure generator for robotic assembly arm 1."
+        }
+      ],
+      "reasoning": "The excerpts contain explicit fields for component status, temperature_celsius, and maintenance_cycle for two components (Emergency Brake D and Hydraulic Pump A). These concrete data points directly address the topic of analyzing component status, temperature readings, and maintenance cycles, allowing a factual analysis without needing additional information.",
+      "missing_information": null
+    },
+    {
+      "topic": "Recommended corrective actions and preventive maintenance steps",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "Rocket propulsion orbital flight trajectory calculations",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    }
+  ],
+  "guaranteed_capabilities": [
+    "Analysis of component status, temperature readings, and maintenance cycles from provided documents"
+  ],
+  "partially_supported_topics": [
+    "Interpretation of thermal cutoff triggers and related safety protocols",
+    "Indicators and procedures for servicing coolant valves"
+  ],
+  "blocked_unsupported_topics": [
+    "Causes and diagnostics of hydraulic pump pressure drops",
+    "Recommended corrective actions and preventive maintenance steps",
+    "Rocket propulsion orbital flight trajectory calculations"
+  ],
+  "recommendations": [
+    "Blocked unsupported topic 'Causes and diagnostics of hydraulic pump pressure drops'. Provide manual or technical specifications to enable.",
+    "For 'Interpretation of thermal cutoff triggers and related safety protocols': Upload documentation addressing: Specific steps of the thermal shutdown protocol, operator response actions, post‑trigger safety checks, and any additional thresholds or escalation procedures.",
+    "For 'Indicators and procedures for servicing coolant valves': Upload documentation addressing: Specific servicing procedures for coolant valves (e.g., steps to inspect, clean, replace parts, safety precautions) are not provided. While the excerpts give some indicators such as status = 'Warning', maintenance_cycle = 14 days, and temperature reading, they do not detail how to act on these indicators.",
+    "Blocked unsupported topic 'Recommended corrective actions and preventive maintenance steps'. Provide manual or technical specifications to enable.",
+    "Blocked unsupported topic 'Rocket propulsion orbital flight trajectory calculations'. Provide manual or technical specifications to enable."
+  ],
+  "evaluated_at": "2026-11-23T19:08:35.057620"
+}

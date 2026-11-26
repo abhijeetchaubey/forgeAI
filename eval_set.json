@@ -1,0 +1,331 @@
+{
+  "total_test_cases": 22,
+  "category_counts": {
+    "answerable": 6,
+    "multi_document": 6,
+    "ambiguous": 5,
+    "out_of_scope": 5
+  },
+  "test_cases": [
+    {
+      "test_id": "EVAL-001",
+      "question": "What is the maintenance cycle for Hydraulic Pump A?",
+      "category": "answerable",
+      "expected_facts": [
+        "30 days"
+      ],
+      "expected_source_document": [
+        "sample.csv"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must state the maintenance cycle exactly as '30 days' and cite the source as sample.csv. Any deviation in number or unit is incorrect."
+    },
+    {
+      "test_id": "EVAL-002",
+      "question": "What is the temperature reading for Emergency Brake D?",
+      "category": "answerable",
+      "expected_facts": [
+        "91.2 Celsius"
+      ],
+      "expected_source_document": [
+        "sample.csv"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must provide the temperature value 91.2 followed by the unit Celsius, referencing sample.csv. Incorrect values or missing unit are penalized."
+    },
+    {
+      "test_id": "EVAL-003",
+      "question": "According to the specification PDF, what is the emergency cutoff temperature?",
+      "category": "answerable",
+      "expected_facts": [
+        "85 Celsius"
+      ],
+      "expected_source_document": [
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 2",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must be exactly '85 Celsius' and attribute the information to sample.pdf page 2. Any other temperature or missing citation is wrong."
+    },
+    {
+      "test_id": "EVAL-004",
+      "question": "In the operational manual, at what temperature does an automated shutoff trigger?",
+      "category": "answerable",
+      "expected_facts": [
+        "85 degrees Celsius"
+      ],
+      "expected_source_document": [
+        "sample.txt"
+      ],
+      "expected_page_number": "page 1",
+      "should_refuse": false,
+      "evaluation_criteria": "The response must state '85 degrees Celsius' and cite the manual (sample.txt page 1). The phrasing must match the temperature value; variations like '85°C' are acceptable if the value is correct."
+    },
+    {
+      "test_id": "EVAL-005",
+      "question": "Which component has a status of \"Warning\"?",
+      "category": "answerable",
+      "expected_facts": [
+        "Coolant Valve B"
+      ],
+      "expected_source_document": [
+        "sample.csv"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must name the component exactly as 'Coolant Valve B' and reference sample.csv. Any other component name is incorrect."
+    },
+    {
+      "test_id": "EVAL-006",
+      "question": "What is the operating pressure specified in the robotic cell specification?",
+      "category": "answerable",
+      "expected_facts": [
+        "120 bar"
+      ],
+      "expected_source_document": [
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 1",
+      "should_refuse": false,
+      "evaluation_criteria": "The response must give the pressure value '120 bar' and cite sample.pdf page 1. Incorrect units or values are penalized."
+    },
+    {
+      "test_id": "EVAL-007",
+      "question": "Identify any components whose temperature exceeds the emergency cutoff temperature defined in the PDF.",
+      "category": "multi_document",
+      "expected_facts": [
+        "Component: Emergency Brake D",
+        "Temperature: 91.2 Celsius",
+        "Status: Critical"
+      ],
+      "expected_source_document": [
+        "sample.csv",
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 2",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must list each component whose temperature > 85°C (cutoff from sample.pdf page 2). For each, provide component name, temperature with unit, and status as recorded in sample.csv. Only Emergency Brake D meets the condition."
+    },
+    {
+      "test_id": "EVAL-008",
+      "question": "Which components are due for maintenance within the next 15 days, assuming today is day 0?",
+      "category": "multi_document",
+      "expected_facts": [
+        "Coolant Valve B – maintenance_cycle: 14 days",
+        "Emergency Brake D – maintenance_cycle: 7 days"
+      ],
+      "expected_source_document": [
+        "sample.csv",
+        "sample.txt"
+      ],
+      "expected_page_number": "page 1",
+      "should_refuse": false,
+      "evaluation_criteria": "The response must identify components whose maintenance_cycle ≤ 15 days using data from sample.csv and reference the manual (sample.txt page 1) to justify the timeframe. List both components with their exact cycle values."
+    },
+    {
+      "test_id": "EVAL-009",
+      "question": "Compare the temperature of the component with the highest temperature to the emergency cutoff temperature and state whether it is above or below the cutoff.",
+      "category": "multi_document",
+      "expected_facts": [
+        "Highest temperature component: Emergency Brake D",
+        "Temperature: 91.2 Celsius",
+        "Emergency cutoff: 85 Celsius",
+        "Result: above"
+      ],
+      "expected_source_document": [
+        "sample.csv",
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 2",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must correctly identify Emergency Brake D as the hottest component, provide its temperature, cite the cutoff from sample.pdf page 2, and explicitly state that the temperature is 'above' the cutoff."
+    },
+    {
+      "test_id": "EVAL-010",
+      "question": "According to the manual, what actions must be taken when a temperature exceeds the emergency cutoff, and which component in the CSV currently exceeds that threshold?",
+      "category": "multi_document",
+      "expected_facts": [
+        "Actions: inspect the auxiliary cooling loop, ensure coolant valve clearance, log the event into the central factory ledger with telemetry snapshots",
+        "Component exceeding cutoff: Emergency Brake D",
+        "Temperature: 91.2 Celsius"
+      ],
+      "expected_source_document": [
+        "sample.txt",
+        "sample.csv",
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 1, page 2",
+      "should_refuse": false,
+      "evaluation_criteria": "The response must enumerate the three actions described in Chapter 2 of sample.txt, identify Emergency Brake D from sample.csv as the component above the 85°C cutoff (sample.pdf page 2), and include its temperature. All three sources must be referenced."
+    },
+    {
+      "test_id": "EVAL-011",
+      "question": "List all components with a status other than \"Operational\" and indicate if any of those temperatures exceed the emergency cutoff temperature.",
+      "category": "multi_document",
+      "expected_facts": [
+        "Coolant Valve B – status: Warning – temperature: 82.3 Celsius – does not exceed cutoff",
+        "Emergency Brake D – status: Critical – temperature: 91.2 Celsius – exceeds cutoff"
+      ],
+      "expected_source_document": [
+        "sample.csv",
+        "sample.pdf"
+      ],
+      "expected_page_number": "page 2",
+      "should_refuse": false,
+      "evaluation_criteria": "The answer must list each non‑operational component from sample.csv, provide its status and temperature, and state whether the temperature is above the 85°C cutoff (from sample.pdf page 2). Accuracy of each flag is required."
+    },
+    {
+      "test_id": "EVAL-012",
+      "question": "Using the specification PDF, what is the operating pressure, and does any component's temperature exceed a threshold that is 10°C above the operating pressure expressed in bar converted to Celsius (assume 1 bar ≈ 100°C for this hypothetical)?",
+      "category": "multi_document",
+      "expected_facts": [
+        "Operating pressure: 120 bar",
+        "Converted temperature threshold: 12,010 Celsius",
+        "No component exceeds this threshold"
+      ],
+      "expected_source_document": [
+        "sample.pdf",
+        "sample.csv"
+      ],
+      "expected_page_number": "page 1",
+      "should_refuse": false,
+      "evaluation_criteria": "The response must state the operating pressure from sample.pdf page 1, perform the conversion (120 bar × 100 = 12,000°C) and add 10°C to get 12,010°C, then compare all component temperatures from sample.csv and conclude that none exceed the threshold. All calculations and citations must be shown."
+    },
+    {
+      "test_id": "EVAL-013",
+      "question": "What is the current status of the hydraulic pump?",
+      "category": "ambiguous",
+      "expected_facts": [
+        "Clarification needed: which hydraulic pump component is being referred to (e.g., Hydraulic Pump A from sample.csv row 1 or the generic hydraulic pump mentioned in sample.pdf page 1)."
+      ],
+      "expected_source_document": [
+        "sample.csv",
+        "sample.pdf"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must identify that the question lacks a specific component identifier, request clarification about which hydraulic pump is meant, and refrain from providing a definitive status. A correct answer explicitly asks the user to specify the component."
+    },
+    {
+      "test_id": "EVAL-014",
+      "question": "When is the next maintenance due for the emergency brake?",
+      "category": "ambiguous",
+      "expected_facts": [
+        "Clarification needed: the current date or the last maintenance date for Emergency Brake D is not provided in the documents."
+      ],
+      "expected_source_document": [
+        "sample.csv"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The answer should note that the document only provides a maintenance cycle (7 days) but no reference date, and therefore ask the user for the last maintenance date or current date before calculating the next due date."
+    },
+    {
+      "test_id": "EVAL-015",
+      "question": "Has any component exceeded the emergency cutoff temperature?",
+      "category": "ambiguous",
+      "expected_facts": [
+        "Clarification needed: the question does not specify a time frame or which components to consider; the documents provide a single temperature snapshot per component."
+      ],
+      "expected_source_document": [
+        "sample.csv",
+        "sample.pdf",
+        "sample.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must explain that only current temperature readings are available, identify the emergency cutoff (85 °C from sample.pdf page 2 and sample.txt chapter 2), and ask the user whether they want a comparison against the latest snapshot or a historical trend."
+    },
+    {
+      "test_id": "EVAL-016",
+      "question": "What is the temperature trend for the coolant valve?",
+      "category": "ambiguous",
+      "expected_facts": [
+        "Clarification needed: the documents contain only a single temperature reading (82.3 °C) for Coolant Valve B; no historical trend data is present."
+      ],
+      "expected_source_document": [
+        "sample.csv"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The answer should state that only one temperature measurement is available, indicate that a trend cannot be derived, and request additional time‑series data if the user wishes to see a trend."
+    },
+    {
+      "test_id": "EVAL-017",
+      "question": "Are there any safety interlock failures reported today?",
+      "category": "ambiguous",
+      "expected_facts": [
+        "Clarification needed: the documents do not contain any safety interlock status logs or timestamps; only general safety protocol text is present."
+      ],
+      "expected_source_document": [
+        "sample.txt"
+      ],
+      "expected_page_number": null,
+      "should_refuse": false,
+      "evaluation_criteria": "The response must acknowledge that no interlock failure data is present in the provided corpus, note the lack of date‑specific logs, and ask the user to supply a log or specify a source."
+    },
+    {
+      "test_id": "EVAL-018",
+      "question": "What is the warranty period for the hydraulic pump?",
+      "category": "out_of_scope",
+      "expected_facts": [
+        "Refusal reason: warranty information is not covered in any of the supplied documents."
+      ],
+      "expected_source_document": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The answer must refuse to answer, citing that warranty details are outside the provided document set, and must not fabricate any information."
+    },
+    {
+      "test_id": "EVAL-019",
+      "question": "Provide the network topology diagram for the factory.",
+      "category": "out_of_scope",
+      "expected_facts": [
+        "Refusal reason: no network topology diagram is included in the supplied corpus."
+      ],
+      "expected_source_document": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The response must refuse, stating that the requested diagram is not present in the given documents, and must not attempt to create or guess the diagram."
+    },
+    {
+      "test_id": "EVAL-020",
+      "question": "How many employees work in the robotics department?",
+      "category": "out_of_scope",
+      "expected_facts": [
+        "Refusal reason: employee count is not mentioned in any of the provided files."
+      ],
+      "expected_source_document": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The answer must refuse, indicating that personnel numbers are outside the scope of the supplied documentation."
+    },
+    {
+      "test_id": "EVAL-021",
+      "question": "What is the cost of the emergency brake component?",
+      "category": "out_of_scope",
+      "expected_facts": [
+        "Refusal reason: pricing information is not included in the provided documents."
+      ],
+      "expected_source_document": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The response must refuse, clearly stating that cost details are not available in the given corpus."
+    },
+    {
+      "test_id": "EVAL-022",
+      "question": "Explain the software version control process used for the robot control code.",
+      "category": "out_of_scope",
+      "expected_facts": [
+        "Refusal reason: software version control procedures are not described in any of the supplied documents."
+      ],
+      "expected_source_document": [],
+      "expected_page_number": null,
+      "should_refuse": true,
+      "evaluation_criteria": "The answer must refuse, noting that the requested information about version control is not present in the provided material."
+    }
+  ],
+  "generated_at": "2026-11-24T15:43:16.456121"
+}

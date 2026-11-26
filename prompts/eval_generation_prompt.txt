@@ -1,0 +1,37 @@
+DOCUMENT CORPUS AND METADATA:
+{document_corpus}
+
+INSTRUCTIONS:
+Generate at least 12 high-quality test cases based on the document corpus above.
+Include:
+1. 'answerable': Questions directly answerable from a single document. (At least 6 cases)
+2. 'multi_document': Questions requiring information synthesis across at least two distinct documents. (At least 6 cases)
+
+Each test case MUST include:
+- question: clear, precise question
+- category: 'answerable' or 'multi_document'
+- expected_facts: list of factual data points from the documents
+- expected_source_document: list of document names (e.g. ['sample.pdf', 'sample.csv'])
+- expected_page_number: string of page number(s) or null
+- should_refuse: false
+- evaluation_criteria: detailed rubric for grading the response
+
+
+---
+
+DOCUMENT CORPUS AND METADATA:
+{document_corpus}
+
+INSTRUCTIONS:
+Generate at least 10 boundary evaluation test cases:
+1. 'ambiguous': Questions referencing domain concepts in the documents but lacking specific context (e.g. entity name, time range, threshold), requiring clarification or conditional answers. (At least 5 cases)
+2. 'out_of_scope': Inquiries clearly outside the provided document corpus that the agent MUST refuse. (At least 5 cases)
+
+Each test case MUST include:
+- question: the question text
+- category: 'ambiguous' or 'out_of_scope'
+- expected_facts: expected refusal reason or clarification needed
+- expected_source_document: empty list for out_of_scope, or referenced docs for ambiguous
+- expected_page_number: null
+- should_refuse: true for out_of_scope, false for ambiguous
+- evaluation_criteria: detailed rubric for grading the response

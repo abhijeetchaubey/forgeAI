@@ -1,0 +1,11 @@
+ForgeAI Factory Operational Manual: Safety Protocols & Robotic Cell Operations.
+
+Chapter 1: Overview and Architecture
+The automated manufacturing floor consists of three high-precision robotic workcells.
+Each cell is continuously monitored by IoT telemetry sensors reporting pressure, vibration, and temperature.
+Standard operating procedures require daily calibration of all pneumatic actuators and weekly inspection of safety interlocks.
+
+Chapter 2: Thermal Management and Emergency Cutoff
+In the event of an anomalous temperature spike exceeding 85 degrees Celsius, automated shutoff triggers immediately.
+Operators must inspect the auxiliary cooling loop and ensure coolant valve clearance before manual restart.
+All shutdown events must be logged into the central factory ledger with telemetry snapshots.

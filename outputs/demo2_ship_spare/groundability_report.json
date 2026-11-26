@@ -1,0 +1,205 @@
+{
+  "total_topics_analyzed": 8,
+  "supported_count": 1,
+  "partially_supported_count": 4,
+  "unsupported_count": 3,
+  "topic_evaluations": [
+    {
+      "topic": "Part pricing (unit price in USD)",
+      "status": "partially_supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "product_catalogue.csv",
+          "page_number": 1,
+          "row_number": 6,
+          "chunk_index": 5,
+          "similarity_score": 1.2587,
+          "excerpt": "part_id: SP-106\npart_name: High-Pressure Hydraulic Hose 2m\ncategory: Hydraulics\nunit_price_usd: 280.00\nlead_time_days: 14\nmin_order_qty: 2\nstock_status: Backorder\nsupplier_id: SUP-02"
+        },
+        {
+          "source_file": "product_catalogue.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "chunk_index": 3,
+          "similarity_score": 1.2749,
+          "excerpt": "part_id: SP-104\npart_name: Cylinder Head Gasket Kit\ncategory: Engine Block\nunit_price_usd: 540.00\nlead_time_days: 10\nmin_order_qty: 2\nstock_status: In Stock\nsupplier_id: SUP-01"
+        },
+        {
+          "source_file": "product_catalogue.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "chunk_index": 2,
+          "similarity_score": 1.3009,
+          "excerpt": "part_id: SP-103\npart_name: Seawater Cooling Pump Impeller\ncategory: Cooling\nunit_price_usd: 320.00\nlead_time_days: 5\nmin_order_qty: 4\nstock_status: In Stock\nsupplier_id: SUP-03"
+        },
+        {
+          "source_file": "product_catalogue.csv",
+          "page_number": 1,
+          "row_number": 5,
+          "chunk_index": 4,
+          "similarity_score": 1.3158,
+          "excerpt": "part_id: SP-105\npart_name: Auxiliary Bilge Float Switch\ncategory: Safety\nunit_price_usd: 115.00\nlead_time_days: 3\nmin_order_qty: 5\nstock_status: In Stock\nsupplier_id: SUP-03"
+        }
+      ],
+      "reasoning": "Marginal semantic match found (best distance: 1.2587). Partial information only.",
+      "missing_information": "In-depth operational specifications or procedure details."
+    },
+    {
+      "topic": "Lead times (days)",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "Minimum order quantities",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "Stock status",
+      "status": "partially_supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "product_catalogue.csv",
+          "page_number": 1,
+          "row_number": 5,
+          "chunk_index": 4,
+          "similarity_score": 1.1393,
+          "excerpt": "part_id: SP-105\npart_name: Auxiliary Bilge Float Switch\ncategory: Safety\nunit_price_usd: 115.00\nlead_time_days: 3\nmin_order_qty: 5\nstock_status: In Stock\nsupplier_id: SUP-03"
+        },
+        {
+          "source_file": "product_catalogue.csv",
+          "page_number": 1,
+          "row_number": 4,
+          "chunk_index": 3,
+          "similarity_score": 1.1684,
+          "excerpt": "part_id: SP-104\npart_name: Cylinder Head Gasket Kit\ncategory: Engine Block\nunit_price_usd: 540.00\nlead_time_days: 10\nmin_order_qty: 2\nstock_status: In Stock\nsupplier_id: SUP-01"
+        },
+        {
+          "source_file": "product_catalogue.csv",
+          "page_number": 1,
+          "row_number": 1,
+          "chunk_index": 0,
+          "similarity_score": 1.2316,
+          "excerpt": "part_id: SP-101\npart_name: Main Diesel Fuel Injector\ncategory: Fuel System\nunit_price_usd: 1450.00\nlead_time_days: 7\nmin_order_qty: 2\nstock_status: In Stock\nsupplier_id: SUP-01"
+        },
+        {
+          "source_file": "product_catalogue.csv",
+          "page_number": 1,
+          "row_number": 3,
+          "chunk_index": 2,
+          "similarity_score": 1.2642,
+          "excerpt": "part_id: SP-103\npart_name: Seawater Cooling Pump Impeller\ncategory: Cooling\nunit_price_usd: 320.00\nlead_time_days: 5\nmin_order_qty: 4\nstock_status: In Stock\nsupplier_id: SUP-03"
+        }
+      ],
+      "reasoning": "Marginal semantic match found (best distance: 1.1393). Partial information only.",
+      "missing_information": "In-depth operational specifications or procedure details."
+    },
+    {
+      "topic": "Supplier payment terms",
+      "status": "partially_supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "supplier_directory.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.2069,
+          "excerpt": "MARITIME APPROVED SUPPLIER DIRECTORY - SECTION A\nSupplier ID: SUP-01 | Nordic Marine Spares AS (Oslo, Norway)\n- Payment Terms: Net 30 days.\n- Certifications: ISO 9001:2015 and DNV-GL Marine Approved.\n- Emergency Expedite: 48-hour air-freight dispatch incurs an 18% expedite surcharge.\nSupplier ID: SUP-02 | Pacific Propulsion Ltd (Singapore)\n- Payment Terms: Net 45 days.\n- Certifications: Class NK and Lloyd's Register certified.\n- Freight Policy: Free port delivery in Singapore for orders >= $5,000 USD."
+        },
+        {
+          "source_file": "supplier_directory.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "chunk_index": 1,
+          "similarity_score": 1.2478,
+          "excerpt": "MARITIME APPROVED SUPPLIER DIRECTORY - SECTION B\nSupplier ID: SUP-03 | Aegean Valve & Pump Corp (Piraeus, Greece)\n- Payment Terms: Net 30 days.\n- Certifications: ISO 14001 and EU-Origin EUR.1 certificate provided.\n- Warranty: 12-month OEM defect warranty on bronze impellers and switches.\nProcurement Compliance Rule:\nAll purchase orders exceeding $10,000 USD require Fleet Superintendent sign-off."
+        }
+      ],
+      "reasoning": "Marginal semantic match found (best distance: 1.2069). Partial information only.",
+      "missing_information": "In-depth operational specifications or procedure details."
+    },
+    {
+      "topic": "Technical specifications and limits (e.g., pressure ratings, engine compatibility)",
+      "status": "supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "spare_parts_specs.txt",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 0.7903,
+          "excerpt": "SHIP-SPARE TECHNICAL SPECIFICATION MANUAL\n\n1. SP-101 Main Diesel Fuel Injector:\n- Maximum rated injection pressure: 1,800 bar.\n- Compatible Engine Series: Wartsila 32 & MAN L32/40.\n- Recommended OEM replacement interval: every 6,000 running hours.\n\n2. SP-102 Turbocharger Cartridge Assembly:\n- Maximum continuous exhaust gas temperature: 620 degrees Celsius.\n- Rotor dynamic balance tolerance: 0.5 g-mm.\n\n3. SP-103 Seawater Cooling Pump Impeller:\n- Material: Nickel-Aluminum Bronze & Nitrile composite.\n- Maximum flow capacity: 140 cubic meters per hour at 1,450 RPM.\n\n4. SP-104 Cylinder Head Gasket Kit:\n- Multi-layer stainless steel construction.\n- Final cylinder head bolt torque specification: 240 Nm."
+        }
+      ],
+      "reasoning": "Direct semantic document match found (best distance: 0.7903).",
+      "missing_information": null
+    },
+    {
+      "topic": "Total order cost calculations (including quantity and unit price)",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "Supplier certifications and contact information",
+      "status": "partially_supported",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source_file": "supplier_directory.pdf",
+          "page_number": 2,
+          "row_number": null,
+          "chunk_index": 1,
+          "similarity_score": 1.088,
+          "excerpt": "MARITIME APPROVED SUPPLIER DIRECTORY - SECTION B\nSupplier ID: SUP-03 | Aegean Valve & Pump Corp (Piraeus, Greece)\n- Payment Terms: Net 30 days.\n- Certifications: ISO 14001 and EU-Origin EUR.1 certificate provided.\n- Warranty: 12-month OEM defect warranty on bronze impellers and switches.\nProcurement Compliance Rule:\nAll purchase orders exceeding $10,000 USD require Fleet Superintendent sign-off."
+        },
+        {
+          "source_file": "supplier_directory.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.1753,
+          "excerpt": "MARITIME APPROVED SUPPLIER DIRECTORY - SECTION A\nSupplier ID: SUP-01 | Nordic Marine Spares AS (Oslo, Norway)\n- Payment Terms: Net 30 days.\n- Certifications: ISO 9001:2015 and DNV-GL Marine Approved.\n- Emergency Expedite: 48-hour air-freight dispatch incurs an 18% expedite surcharge.\nSupplier ID: SUP-02 | Pacific Propulsion Ltd (Singapore)\n- Payment Terms: Net 45 days.\n- Certifications: Class NK and Lloyd's Register certified.\n- Freight Policy: Free port delivery in Singapore for orders >= $5,000 USD."
+        }
+      ],
+      "reasoning": "Marginal semantic match found (best distance: 1.088). Partial information only.",
+      "missing_information": "In-depth operational specifications or procedure details."
+    }
+  ],
+  "guaranteed_capabilities": [
+    "Technical specifications and limits (e.g., pressure ratings, engine compatibility)"
+  ],
+  "partially_supported_topics": [
+    "Part pricing (unit price in USD)",
+    "Stock status",
+    "Supplier payment terms",
+    "Supplier certifications and contact information"
+  ],
+  "blocked_unsupported_topics": [
+    "Lead times (days)",
+    "Minimum order quantities",
+    "Total order cost calculations (including quantity and unit price)"
+  ],
+  "recommendations": [
+    "For 'Part pricing (unit price in USD)': Upload documentation addressing: In-depth operational specifications or procedure details.",
+    "Blocked unsupported topic 'Lead times (days)'. Provide manual or technical specifications to enable.",
+    "Blocked unsupported topic 'Minimum order quantities'. Provide manual or technical specifications to enable.",
+    "For 'Stock status': Upload documentation addressing: In-depth operational specifications or procedure details.",
+    "For 'Supplier payment terms': Upload documentation addressing: In-depth operational specifications or procedure details.",
+    "Blocked unsupported topic 'Total order cost calculations (including quantity and unit price)'. Provide manual or technical specifications to enable.",
+    "For 'Supplier certifications and contact information': Upload documentation addressing: In-depth operational specifications or procedure details."
+  ],
+  "evaluated_at": "2026-11-26T15:38:42.680497"
+}

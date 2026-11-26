@@ -1,0 +1,168 @@
+{
+  "total_topics_analyzed": 6,
+  "supported_count": 0,
+  "partially_supported_count": 3,
+  "unsupported_count": 3,
+  "topic_evaluations": [
+    {
+      "topic": "Company HR policies",
+      "status": "partially_supported",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.198,
+          "excerpt": "DEMO DOCUMENT — Fictional sample policy for ForgeAI testing\nPage 1\nMedical Benefits Policy\nOceanic Services Ltd. | Demonstration dataset | Version 1.0\n1. Purpose and eligibility\nThis policy summarizes the medical benefit arrangement for eligible full-time employees of the fictional company\nOceanic Services Ltd. Coverage for dependants, temporary staff, contractors and retirees is not established by\nthis document and must be confirmed with Human Resources.\n2. Medical coverage\nEligible employees are covered under the company's group medical insurance plan, subject to the insurer's policy\nterms, network rules, exclusions and annual limits. The insurance certificate and current insurer schedule\ndetermine the exact coverage available to an individual employee.\nThe plan may provide coverage for eligible inpatient hospitalization and specified day-care procedures.\nOutpatient consultations, dental care, vision care and non-prescribed wellness products are not automatically"
+        },
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 1.2057,
+          "excerpt": "include the completed claim form, itemized bills, payment receipts, prescriptions, investigation reports and\ndischarge summary, as applicable.\nClaims must be submitted within the deadline stated by the insurer. The insurer determines whether an expense\nis admissible and the amount payable. Submission of a claim does not guarantee reimbursement.\n5. Exclusions and limitations\nCoverage is subject to the insurer's exclusions, waiting periods, sub-limits, co-payments and other policy\nconditions. Cosmetic procedures, expenses without medical necessity and treatments specifically excluded by\nthe insurer may not be covered. Employees should review the current insurance schedule before incurring\nnon-emergency expenses.\n6. Documents and assistance\nEmployees seeking help with eligibility, network hospitals, claim status or required documents should contact\nHuman Resources or the benefits administrator. Do not send medical records or sensitive personal information to\nan unapproved channel."
+        },
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 3,
+          "similarity_score": 1.2057,
+          "excerpt": "Human Resources or the benefits administrator. Do not send medical records or sensitive personal information to\nan unapproved channel.\n7. Important limitation\nThis document is a high-level summary and does not state a fixed monetary coverage limit, a guaranteed claim\nsettlement period or a complete list of covered treatments. Those details must be checked in the current insurer"
+        }
+      ],
+      "reasoning": "The excerpts describe a medical benefits policy, including purpose, eligibility, coverage, exclusions, and contact with HR for assistance. They do not provide information on other HR policies such as hiring, performance management, leave policies, or general HR procedures. Therefore, while the excerpts mention HR in the context of medical benefits, they do not fully support answering operational questions about the broader topic of Company HR policies.",
+      "missing_information": "The excerpts only cover medical benefits policy and mention HR contact for assistance; they do not provide comprehensive details on other HR policies, procedures, eligibility criteria, or operational guidelines beyond medical benefits."
+    },
+    {
+      "topic": "Annual leave entitlements and procedures",
+      "status": "unsupported",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 1.3076,
+          "excerpt": "include the completed claim form, itemized bills, payment receipts, prescriptions, investigation reports and\ndischarge summary, as applicable.\nClaims must be submitted within the deadline stated by the insurer. The insurer determines whether an expense\nis admissible and the amount payable. Submission of a claim does not guarantee reimbursement.\n5. Exclusions and limitations\nCoverage is subject to the insurer's exclusions, waiting periods, sub-limits, co-payments and other policy\nconditions. Cosmetic procedures, expenses without medical necessity and treatments specifically excluded by\nthe insurer may not be covered. Employees should review the current insurance schedule before incurring\nnon-emergency expenses.\n6. Documents and assistance\nEmployees seeking help with eligibility, network hospitals, claim status or required documents should contact\nHuman Resources or the benefits administrator. Do not send medical records or sensitive personal information to\nan unapproved channel."
+        }
+      ],
+      "reasoning": "The provided excerpts discuss medical claim submission, exclusions, and assistance, with no mention of annual leave entitlements or procedures. Therefore, they do not provide any facts relevant to the topic.",
+      "missing_information": "Information about annual leave entitlements, accrual rates, carryover policies, application procedures, approval process, documentation required, etc."
+    },
+    {
+      "topic": "Salary structure and payment details",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "Medical benefits and coverage",
+      "status": "partially_supported",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 0.9527,
+          "excerpt": "DEMO DOCUMENT — Fictional sample policy for ForgeAI testing\nPage 1\nMedical Benefits Policy\nOceanic Services Ltd. | Demonstration dataset | Version 1.0\n1. Purpose and eligibility\nThis policy summarizes the medical benefit arrangement for eligible full-time employees of the fictional company\nOceanic Services Ltd. Coverage for dependants, temporary staff, contractors and retirees is not established by\nthis document and must be confirmed with Human Resources.\n2. Medical coverage\nEligible employees are covered under the company's group medical insurance plan, subject to the insurer's policy\nterms, network rules, exclusions and annual limits. The insurance certificate and current insurer schedule\ndetermine the exact coverage available to an individual employee.\nThe plan may provide coverage for eligible inpatient hospitalization and specified day-care procedures.\nOutpatient consultations, dental care, vision care and non-prescribed wellness products are not automatically"
+        },
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 3,
+          "similarity_score": 0.9743,
+          "excerpt": "Human Resources or the benefits administrator. Do not send medical records or sensitive personal information to\nan unapproved channel.\n7. Important limitation\nThis document is a high-level summary and does not state a fixed monetary coverage limit, a guaranteed claim\nsettlement period or a complete list of covered treatments. Those details must be checked in the current insurer"
+        },
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 1.0203,
+          "excerpt": "include the completed claim form, itemized bills, payment receipts, prescriptions, investigation reports and\ndischarge summary, as applicable.\nClaims must be submitted within the deadline stated by the insurer. The insurer determines whether an expense\nis admissible and the amount payable. Submission of a claim does not guarantee reimbursement.\n5. Exclusions and limitations\nCoverage is subject to the insurer's exclusions, waiting periods, sub-limits, co-payments and other policy\nconditions. Cosmetic procedures, expenses without medical necessity and treatments specifically excluded by\nthe insurer may not be covered. Employees should review the current insurance schedule before incurring\nnon-emergency expenses.\n6. Documents and assistance\nEmployees seeking help with eligibility, network hospitals, claim status or required documents should contact\nHuman Resources or the benefits administrator. Do not send medical records or sensitive personal information to\nan unapproved channel."
+        },
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 1,
+          "similarity_score": 1.0476,
+          "excerpt": "Outpatient consultations, dental care, vision care and non-prescribed wellness products are not automatically\ncovered under this summary.\n3. Cashless treatment\nWhere available, employees should use a network hospital and follow the insurer's pre-authorization process for\nplanned hospitalization. Cashless approval is subject to insurer review and is not guaranteed by the company.\nFor emergency admission, the employee or a family representative should contact the insurer or the designated\nbenefits administrator as soon as reasonably possible and follow the insurer's notification requirements.\n4. Reimbursement claims\nIf an eligible expense is paid by the employee and reimbursement is permitted by the insurance plan, the\nemployee must submit a claim through the insurer or designated benefits administrator. Required documents may\ninclude the completed claim form, itemized bills, payment receipts, prescriptions, investigation reports and\ndischarge summary, as applicable."
+        }
+      ],
+      "reasoning": "The excerpts give a high‑level overview of eligibility, general coverage (inpatient, day‑care), exclusions, and claim procedures, but they explicitly state that monetary limits, settlement timelines, and a full list of covered treatments are not included and must be checked in the current insurer schedule. Therefore the information is insufficient to fully answer operational questions about medical benefits and coverage.",
+      "missing_information": "Fixed monetary coverage limits, guaranteed claim settlement period, complete list of covered treatments, specific co-payment amounts, waiting periods, sub-limits, and detailed insurer policy terms are not provided in the excerpts."
+    },
+    {
+      "topic": "Attendance and time‑keeping rules",
+      "status": "unsupported",
+      "confidence": 0.95,
+      "evidence": [],
+      "reasoning": "No relevant document evidence found in uploaded knowledge base within similarity threshold.",
+      "missing_information": "Entire topic is absent from the provided documentation."
+    },
+    {
+      "topic": "Employee reimbursement procedures",
+      "status": "partially_supported",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 2,
+          "similarity_score": 0.8924,
+          "excerpt": "include the completed claim form, itemized bills, payment receipts, prescriptions, investigation reports and\ndischarge summary, as applicable.\nClaims must be submitted within the deadline stated by the insurer. The insurer determines whether an expense\nis admissible and the amount payable. Submission of a claim does not guarantee reimbursement.\n5. Exclusions and limitations\nCoverage is subject to the insurer's exclusions, waiting periods, sub-limits, co-payments and other policy\nconditions. Cosmetic procedures, expenses without medical necessity and treatments specifically excluded by\nthe insurer may not be covered. Employees should review the current insurance schedule before incurring\nnon-emergency expenses.\n6. Documents and assistance\nEmployees seeking help with eligibility, network hospitals, claim status or required documents should contact\nHuman Resources or the benefits administrator. Do not send medical records or sensitive personal information to\nan unapproved channel."
+        },
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 1,
+          "similarity_score": 0.9404,
+          "excerpt": "Outpatient consultations, dental care, vision care and non-prescribed wellness products are not automatically\ncovered under this summary.\n3. Cashless treatment\nWhere available, employees should use a network hospital and follow the insurer's pre-authorization process for\nplanned hospitalization. Cashless approval is subject to insurer review and is not guaranteed by the company.\nFor emergency admission, the employee or a family representative should contact the insurer or the designated\nbenefits administrator as soon as reasonably possible and follow the insurer's notification requirements.\n4. Reimbursement claims\nIf an eligible expense is paid by the employee and reimbursement is permitted by the insurance plan, the\nemployee must submit a claim through the insurer or designated benefits administrator. Required documents may\ninclude the completed claim form, itemized bills, payment receipts, prescriptions, investigation reports and\ndischarge summary, as applicable."
+        },
+        {
+          "source_file": "Medical_Benefits.pdf",
+          "page_number": 1,
+          "row_number": null,
+          "chunk_index": 0,
+          "similarity_score": 1.2685,
+          "excerpt": "DEMO DOCUMENT — Fictional sample policy for ForgeAI testing\nPage 1\nMedical Benefits Policy\nOceanic Services Ltd. | Demonstration dataset | Version 1.0\n1. Purpose and eligibility\nThis policy summarizes the medical benefit arrangement for eligible full-time employees of the fictional company\nOceanic Services Ltd. Coverage for dependants, temporary staff, contractors and retirees is not established by\nthis document and must be confirmed with Human Resources.\n2. Medical coverage\nEligible employees are covered under the company's group medical insurance plan, subject to the insurer's policy\nterms, network rules, exclusions and annual limits. The insurance certificate and current insurer schedule\ndetermine the exact coverage available to an individual employee.\nThe plan may provide coverage for eligible inpatient hospitalization and specified day-care procedures.\nOutpatient consultations, dental care, vision care and non-prescribed wellness products are not automatically"
+        }
+      ],
+      "reasoning": "The excerpts describe that employees must submit a claim through the insurer or designated benefits administrator, list required documents, note that submission does not guarantee reimbursement, and advise contacting HR or the benefits administrator for assistance. However, they do not provide concrete deadlines, threshold amounts, detailed step‑by‑step procedures, or specific contact information, which are essential for fully answering operational questions about employee reimbursement procedures.",
+      "missing_information": "Specific deadlines, threshold values, step-by-step instructions, and contact details for reimbursement are not provided."
+    }
+  ],
+  "guaranteed_capabilities": [],
+  "partially_supported_topics": [
+    "Company HR policies",
+    "Medical benefits and coverage",
+    "Employee reimbursement procedures"
+  ],
+  "blocked_unsupported_topics": [
+    "Annual leave entitlements and procedures",
+    "Salary structure and payment details",
+    "Attendance and time‑keeping rules"
+  ],
+  "recommendations": [
+    "For 'Company HR policies': Upload documentation addressing: The excerpts only cover medical benefits policy and mention HR contact for assistance; they do not provide comprehensive details on other HR policies, procedures, eligibility criteria, or operational guidelines beyond medical benefits.",
+    "Blocked unsupported topic 'Annual leave entitlements and procedures'. Provide manual or technical specifications to enable.",
+    "Blocked unsupported topic 'Salary structure and payment details'. Provide manual or technical specifications to enable.",
+    "For 'Medical benefits and coverage': Upload documentation addressing: Fixed monetary coverage limits, guaranteed claim settlement period, complete list of covered treatments, specific co-payment amounts, waiting periods, sub-limits, and detailed insurer policy terms are not provided in the excerpts.",
+    "Blocked unsupported topic 'Attendance and time‑keeping rules'. Provide manual or technical specifications to enable.",
+    "For 'Employee reimbursement procedures': Upload documentation addressing: Specific deadlines, threshold values, step-by-step instructions, and contact details for reimbursement are not provided."
+  ],
+  "evaluated_at": "2026-11-26T16:47:22.847756"
+}
